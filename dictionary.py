@@ -12,6 +12,37 @@ class POS:
         
     """
     def __init__(self,posstr=None,posobj=None,descriptionstr=None,speechpartlst=[],descriptionlst=[]):
+        def signature():
+            """
+            generates a constructor signature that is used to select a function for creating the object.
+                Parameters:
+                    The parameters of the __init__ function
+                Returns:
+                    For each parameter in the __init__ function
+                        assign a unique power of 2 value
+                        if the type of the parameter in None or empty set,dict,list set the value to 0 
+                        else set the value to the power of 2
+                        Sum all the values
+                        return the sum for the signature
+            """
+            p1=2
+            p2=4
+            p3=8
+            p4=16
+            p5=32
+            toreturn=0
+            if posstr==None:
+                toreturn+=p1
+            if posobj==None:
+                toreturn+=p2
+            if descriptionstr==None:
+                toreturn+=p3
+            if speechpartlst==[]:
+                toreturn+=p4
+            if descriptionlst==None:
+                toreturn+=p5
+            return toreturn
+        
         self.posstr=posstr
         self.descriptionstr=descriptionstr
         self.wordlst=list()
@@ -200,9 +231,21 @@ class Definition:
 
             
 class Dictionary:
-    """Load, create, update save a dictionary"""
+    """
+    Load, create, update save a dictionary
+    A dictionary contains a list of speechpart Objects
+    A Dictionary can be loaded from a dictionary file or from a dictionary object or a set
+        of speechpart objects
+    Members:
+        dictionaryfle a file containing a dictionary in JSON format
+        dictionaryobj a dictionary object
+        speechpartset a set of speechparts that make up a dictionary
+    """
     
-    def __init__(self,dictfile):
-        """Constructor"""
-        self.
+    def __init__(self,dictionaryfle=None,dictionaryobj=None,speechpartset=set()):
+        self.dictioanryfle=dictionaryfle
+        self.dictionaryobj=dictionaryobj
+        self.speechpartset=set()
+        for speechpartobj in speechpartset:
+            speechpartset.addspeechpartobj
     
