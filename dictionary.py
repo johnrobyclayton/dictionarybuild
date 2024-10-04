@@ -1,3 +1,4 @@
+import copy
 class POS:
     """
     Load,create,edit,save Parts of Speech
@@ -11,7 +12,13 @@ class POS:
         speechpartlst: a list of speechpart objects that are this part of speech observed in corpora
         
     """
-    def __init__(self,posstr=None,posobj=None,descriptionstr=None,speechpartlst=[],descriptionlst=[]):
+    def isValid(self):
+        descriptionlstUnpacked=str()
+        for speechpartobj in self.descriptionlst:
+            descriptionUnpacked+=str(speechpartobj)
+        return self.descriptionstr==descriptionlstUnpacked
+
+    def __init__(self,*,posstr=None,descriptionstr=None,speechpartset=[],descriptionlst=[]):
         def signature():
             """
             generates a constructor signature that is used to select a function for creating the object.
@@ -25,31 +32,17 @@ class POS:
                         Sum all the values
                         return the sum for the signature
             """
-            p1=2
-            p2=4
-            p3=8
-            p4=16
-            p5=32
-            toreturn=0
-            if posstr==None:
-                toreturn+=p1
-            if posobj==None:
-                toreturn+=p2
-            if descriptionstr==None:
-                toreturn+=p3
-            if speechpartlst==[]:
-                toreturn+=p4
-            if descriptionlst==None:
-                toreturn+=p5
-            return toreturn
+            
+            
+            
         
         self.posstr=posstr
         self.descriptionstr=descriptionstr
         self.wordlst=list()
-        for speechpartobj in speechpartlst:
+        for speechpartobj in speechpartset:
             self.speechpartlst.append(speechpartobj)
         for speechpartobj in descriptionlst:
-            self.descriptionlst.append(speechpartobj)
+            self.descriptionset.append(speechpartobj)
 
 class SpeechPartGroup:
     """
@@ -66,7 +59,13 @@ class SpeechPartGroup:
         descriptionlst: The list of SpeechPart objects that make up the 
             descriptionstr 
     """
-    def __init__(self,posobj=None,descriptionstr= None,contextset=set(),speechpartset=set(),descriptionlst=[]):
+    def isValid(self):
+        descriptionlstUnpacked=str()
+        for speechpartobj in self.descriptionlst:
+            descriptionUnpacked+=str(speechpartobj)
+        return self.descriptionstr==descriptionlstUnpacked
+
+    def __init__(self,descriptionstr= None,contextset=set(),speechpartset=set(),descriptionlst=[]):
         self.posobj=posobj
         self.descriptionstr=descriptionstr
         self.contextset=set()
@@ -94,7 +93,14 @@ class SpeechPart:
         definitionlst The list of SpeechPart objects making up the definition.
         usageset the set of usage objects that describe where this SpeechPart shows in corpora
     """    
-    def __init__(self, posstr=None,posobj=None,definitionstr=None,definitionlst=[],usageset=set()):
+    def isValid(self):
+        descriptionlstUnpacked=str()
+        for speechpartobj in self.definitionlst:
+            definitionlstUnpacked+=str(speechpartobj)
+        return self.desfinitionstr==definitionlstUnpacked
+
+    def __init__(self, posstr=None,definitionstr=None,definitionlst=[],usageset=set()):
+        
         
         self.posstr=posstr
         self.posobj=posobj
