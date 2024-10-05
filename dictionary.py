@@ -2,6 +2,32 @@ import copy
 import nltk
 from nltk.text import Text
 from nltk.tokenize import word_tokenize
+
+class Grammar:
+    """
+    Store the Parts of Speech objects
+    Store the Parts of Speech Phrases objects
+    Store the equivalencies between Parts Of speech and Parts Of Speech Phrases
+    """
+    pass
+class POSPhrases:
+    """
+    Store sequences of Parts Of Speech observed in Corpora
+    For example: "The cat sat on the mat" woul becoem:
+    "article noun verb positional article noun"
+    "article noun" would be very common
+    Examples:
+    The cat
+    a dog
+    this house
+    that car
+    your hat
+    our home
+    his shirt
+    her shoes
+    their ball
+    """
+    pass
 class POS:
     """
     Load,create,edit,save Parts of Speech
@@ -11,7 +37,7 @@ class POS:
         descriptionlst: an ordered list of SpeechParts objects, 
             which can be either Word objects or 
             Phrase objects that make up the description
-        speechpartlst: a list of speechpart objects that are this 
+        speechpartset: a set of speechpart objects that are this 
             part of speech observed in corpora
         posstr: a string identifying the part of speech
         
@@ -22,10 +48,21 @@ class POS:
             descriptionUnpacked+=str(speechpartobj)
         return self.descriptionstr==descriptionlstUnpacked
 
+    def __repr__(self):
+        return f'PartOfSpeech:{self.posstr}\nDescription:{self.descriptionstr}'
+            
+    def __str__(self):
+        return f'{self.posstr}'    
+
     def __init__(self,*,descriptionstr=None,descriptionlst=[],speechpartset=[],posstr=None):
         self.posstr=posstr
         self.descriptionstr=descriptionstr
-        self.wordlst=list()
+        if descriptionlst==[]:
+            self.descriptionlst=list()
+            for token in nltk.tokenize.word_tokenize(self.descriptionstr):
+                self.definitionlst.append(\
+                    Word(wordstr=token,definitionstr=None,definitionlst=[],posstr=None,usageset=set()))    
+            
         for speechpartobj in speechpartset:
             self.speechpartlst.append(speechpartobj)
         for speechpartobj in descriptionlst:
@@ -50,6 +87,12 @@ class SpeechPartGroup:
         for speechpartobj in self.descriptionlst:
             descriptionUnpacked+=str(speechpartobj)
         return self.descriptionstr==descriptionlstUnpacked
+
+    def __repr__(self):
+        return f'Description:{self.descriptionstr}'
+            
+    def __str__(self):
+        return f'{self.descriptionstr}'    
 
     def __init__(self,*,descriptionstr= None,descriptionlst=[],\
             contextset=set(),speechpartset=set()):
@@ -85,7 +128,7 @@ class SpeechPart:
         return self.definitionstr==definitionlstUnpacked
 
     def __init__(self,*,definitionstr=None,definitionlst=[], \
-            posstr=None,usageset=set()):
+            posstr=None,usageset=set(),dictionary=None):
         
         
         self.posstr=posstr
@@ -121,14 +164,23 @@ class Phrase(SpeechPart):
         return self.definitionstr==definitionlstUnpacked and \
             self.phrasestr==phraselstUnpacked
 
+    def __repr__(self):
+        return f'Phrase:{self.phrasestr}\
+            \nPart Of Speech:{self.posstr}\
+            \nDefiition:{self.definitionstr}'
+            
+    def __str__(self):
+        return f'{self.phrasestr}'    
+
     def __init__(self,*,phrasestr=None,phraselst=[],\
             definitionstr=None,definitionlst=[],\
-            usageset=set(),posstr=None):
+            usageset=set(),posstr=None,dictionary=None):
         self.phrasestr=phrasestr
         self.phraselst=list()
         for speechpartobj in phraselst:
             self.phraselst.append(speechpartobj)
-        SpeechPart.__init__(self,posstr=posstr,definitionstr=definitionstr,definitionlst=definitionlst,usageset=usageset)
+        SpeechPart.__init__(self,posstr=posstr,definitionstr=definitionstr\
+            ,definitionlst=definitionlst,usageset=usageset,dictionary=None)
         
 class Word(SpeechPart):
     """
@@ -141,15 +193,31 @@ class Word(SpeechPart):
         posstr the string identifying the part of speech
         usageset the set of usage objects that describe where this phrase shows up in corpora
     """
-    def __init__(self,*,wordstr=None,\
-            definitionstr=None,definitionlst=[],\
-            posstr=None,usageset=set()):
-        self.wordstr=wordstr
-        SpeechPart.__init__(self,posstr=posstr,definitionstr=definitionstr,definitionlst=definitionlst,usageset=usageset)
-        
+    def __repr__(self):
+        return f'Word:{self.wordstr}\
+            \nPartOfSpeech:{self.posstr}\
+            \nDefinition:{self.definitionstr}'
+            
     def __str__(self):
         return f'{self.wordstr}'    
-            
+
+    def __init__(self,*,wordstr=None,\
+            definitionstr=None,definitionlst=[],\
+            posstr=None,usageset=set(),dictionary=None):
+        self.wordstr=wordstr
+        SpeechPart.__init__(self,posstr=posstr,definitionstr=definitionstr,\
+            definitionlst=definitionlst,usageset=usageset,dictioary=None)
+        if dictionary!=None:
+            if posstr=None:
+                if (self.wordstr,'unknown') in dictionary.entries():
+                    print('word is in dictionay')
+            else:
+                if(self.wordstr,self.posstr) in dictionary.entries():
+                    print('word is in dictionary')
+                else:
+                    print('word is not in dictionary')
+        else:
+            print('no dictioary provided') 
 class Usage:
     """
     Load,create,edit,save usages
@@ -171,6 +239,22 @@ class Usage:
         for speechpartobj in self.postspeechpartlst:
             sourcestrUnpacked+=str(speechpartobj)
         return sourcestrUnpacked==self.sourcestr
+
+    def __repr__(self):
+        #build pre part string
+        prestring=str()
+        for speechpartobj in self.prespeechpartlst:
+            presrint+=str(speechpartobj)
+        thisstring=str(self.thisspeechpartobj)
+        poststring=str()
+        for speechpartobj in self.postspeechpartlst:
+            poststring+=str(speechpartobj)
+        return f'Pre speech:{prestring}\
+            \nThis speech:{thisstring}\
+            \nPost speech:{poststring}'
+            
+    def __str__(self):
+        return f'{self.sourcestr}'    
 
     def __init__(self,*,corporaobj=None,prespeechpartlst=[],\
             thisspeechpartobj=None,postspeechpartlst=[],sourcestr=None):
@@ -210,6 +294,14 @@ class Corpora:
         return self.descriptionstr==descriptionlstUnpacked and \
             self.corporastr==corporalstUnpacked
 
+    def __repr__(self):
+        return f'Corpora:{self.namestr}\
+            \nDescription:{self.descriptionstr}\
+            \nPost speech:{self.corporastr}'
+            
+    def __str__(self):
+        return f'{self.namestr}'    
+
     def __init__(self,*,corporastr=None,corporalst=[],\
             descriptionstr=None,descriptionlst=[],\
             namestr=None,metadatastr=None,filespec=None):
@@ -245,6 +337,13 @@ class Definition:
             definitionlstUnpacked+=str(speechpartobj)
         return self.definitionstr==definitionlstUnpacked
 
+    def __repr__(self):
+        return f'Definition:{self.definitionstr}\
+            \nPart Of Speech:{self.posstr}'
+            
+    def __str__(self):
+        return f'{self.definitionstr}'    
+
     def __init__(self,*,definitionstr=None,definitionlst=[],\
             posstr=None,speechpartset=set()):
         self.definitionstr=definitionstr
@@ -269,27 +368,30 @@ class Dictionary:
         dictionaryobj a dictionary object
         speechpartset a set of speechparts that make up a dictionary
     """
-    
-    def __init__(self,dictionaryfle=None,dictionaryobj=None,speechpartset=set()):
+    def entries(self):
+        entry=set()
+        for speechpart in self.speechpartset:
+            entry.add(speechpart.)
+    def __init__(self,dictionaryfle=None,speechpartset=set()):
         self.dictioanryfle=dictionaryfle
-        self.dictionaryobj=dictionaryobj
         self.speechpartset=set()
         for speechpartobj in speechpartset:
-            speechpartset.addspeechpartobj
+            self.speechpartset.add(speechpartobj)
     
 def main():
     w=Word(wordstr='word',definitionstr='A word',definitionlst=[],posstr='noun',usageset=set())
-    print(w.wordstr,w.definitionstr,w.posstr)
+
+    print('Word members\n',w.wordstr,w.definitionstr,w.posstr)
+    print('word string:',str(w))
+    print(f'word repr:\n{w!r}')
     p=Phrase(phrasestr='long word',definitionstr='A long word',definitionlst=[],posstr='noun',usageset=set())
-    print(p.phrasestr,p.definitionstr,p.posstr)
+    #print(p.phrasestr,p.definitionstr,p.posstr)
     d=Definition(definitionstr='A string of text that has no spaces and has a meaning',definitionlst=[],posstr='noun',speechpartset=set())
-    print(d.definitionstr)
-    print(1)
+    #print(d.definitionstr)
     w=Word(wordstr=w.wordstr,definitionstr=d.definitionstr,definitionlst=[],posstr='noun',usageset=set())
-    print(2)
-    print(w.wordstr,w.definitionstr,w.posstr)
+    #print(w.wordstr,w.definitionstr,w.posstr)
     for word in d.definitionlst:
-        print(word)
-    print(3)
+        pass
+        #print(word)
 if __name__ == '__main__':
     main()
