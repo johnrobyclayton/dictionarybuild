@@ -487,6 +487,10 @@ class Word(SpeechPart,DefinitionCompare):
                     self.hasusageset=False
                     break
 
+        self.hasdictionary=False
+        if isinstance(dictionary,Dictionary):
+            self.hasdictionary=True
+            
         if self.hasposstr:
             self.posstr=posstr
         
@@ -498,7 +502,7 @@ class Word(SpeechPart,DefinitionCompare):
             self.wordstr=wordstr
 
 
-        if dictionary!=None:
+        if self.hasdictionary:
             if posstr==None:
                 if (self.wordstr,'unknown') in dictionary.entries():
                     print('word is in dictionay')
@@ -507,8 +511,10 @@ class Word(SpeechPart,DefinitionCompare):
                     print('word is in dictionary')
                 else:
                     print('word is not in dictionary')
+            dictionary.speechpartset.add(self)
         else:
-            print('no dictioary provided') 
+            print('no dictioary provided')
+             
 
 
 
@@ -751,15 +757,15 @@ class Dictionary:
 def main():
     d=Dictionary(dictionaryfle=None,speechpartset=None)
     w=Word(wordstr='word',definitionstr='A word',definitionlst=[],posstr='noun',usageset=set(),dictionary=d)
-    print(d.entries())
-    print('Word members\n',w.wordstr,w.definitionstr,w.posstr)
-    print('word string:',str(w))
-    print(f'word repr:\n{w!r}')
-    p=Phrase(phrasestr='long word',definitionstr='A long word',definitionlst=[],posstr='noun',usageset=set())
+    print('d',d.entries())
+    #print('Word members\n',w.wordstr,w.definitionstr,w.posstr)
+    #print('word string:',str(w))
+    #print(f'word repr:\n{w!r}')
+    #p=Phrase(phrasestr='long word',definitionstr='A long word',definitionlst=[],posstr='noun',usageset=set())
     #print(p.phrasestr,p.definitionstr,p.posstr)
-    d=Definition(definitionstr='A string of text that has no spaces and has a meaning',definitionlst=[],posstr='noun',speechpartset=set())
+    #d=Definition(definitionstr='A string of text that has no spaces and has a meaning',definitionlst=[],posstr='noun',speechpartset=set())
     #print(d.definitionstr)
-    w=Word(wordstr=w.wordstr,definitionstr=d.definitionstr,definitionlst=[],posstr='noun',usageset=set())
+    #w=Word(wordstr=w.wordstr,definitionstr=d.definitionstr,definitionlst=[],posstr='noun',usageset=set())
     #print(w.wordstr,w.definitionstr,w.posstr)
     #for word in d.definitionlst:
     #    pass
