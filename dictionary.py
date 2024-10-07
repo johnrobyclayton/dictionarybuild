@@ -4,6 +4,161 @@ from nltk.text import Text
 from nltk.tokenize import word_tokenize
 
 
+class DescriptionCompare:
+    def __init__(self,*,descriptionstr=None,descriptionlst=None):
+
+        self.hasdescriptionstr=False
+        if isinstance(descriptionstr,str) and descriptionstr!=None:
+            self.hasdescriptionstr=True
+
+        self.hasdescriptionlst=False
+        if isinstance(descriptionlst,list) and descriptionlst != None:
+            self.hasdescriptionlst=True
+            for  speechpartobj in descriptionlst:
+                if not isinstance(speechpartobj,SpeechPart):
+                    self.hasdescriptionlst=False
+                    break
+
+        #if no descriptionstr then create descriptionstr from descriptionlst
+        if self.hasdescriptionstr:
+            self.descriptionstr=descriptionstr
+        elif self.hasdescriptionlst:
+            #build descriptionstr from descriptionlst
+            self.descriptionstr=str()
+            for speechpartobj in descriptionlst:
+                if isinstance(speechpartobj,Word):
+                    if len(self.descriptionstr)>0:
+                        self.descriptionstr+=' '
+                    self.descriptionstr+=speechpartobj.wordstr
+
+        #if no descriptionlst then create descriptionlst from descriptionstr
+        if self.hasdescriptionlst:
+            tempdescriptionlst=list()
+            for speechpartobj in descriptionlst:
+                tempdescriptionlst.append(speechpartobj)
+        elif self.hasdescriptionstr:
+            self.decriptionlst=list()
+            for token in nltk.tokenize.word_tokenize(self.descriptionstr):
+                self.decriptionlst.append(\
+                    Word(wordstr=token,definitionstr=None,definitionlst=[],posstr=None,usageset=set()))    
+    
+    def descriptionMatches(self):
+        stringfromlst=str()
+        for speechpartobj in self.descriptionlst:
+            if isinstance(speechpartobj,Word):
+                if len(self.descriptionstr)>0:
+                    self.descriptionstr+=' '
+                stringfromlst+=speechpartobj.wordstr                
+        return self.descriptionstr==stringfromlst
+
+
+
+class DefinitionCompare:
+    def __init__(self,*,definitionstr=None,definitionlst=None):
+
+        self.hasdefinitionstr=False
+        if isinstance(definitionstr,str) and definitionstr!=None:
+            self.hasdefinitionstr=True
+
+        self.hasdefinitionlst=False
+        if isinstance(definitionlst,list) and definitionlst != None:
+            self.hasdefinitionlst=True
+            for  speechpartobj in definitionlst:
+                if not isinstance(speechpartobj,SpeechPart):
+                    self.hasdefinitionlst=False
+                    break
+
+        #if no definitionstr fill definitionstr with definitionlst
+        if self.hasdefinitionstr:
+            self.definitionstr=definitionstr
+        elif self.hasdefinitionlst:
+            #build definitionstr from desfinitionlst
+            self.definitionstr=str()
+            for speechpartobj in definitionlst:
+                if isinstance(speechpartobj,Word):
+                    if len(self.definitionstr)>0:
+                        self.definitionstr+=' '
+                    self.definitionstr+=speechpartobj.wordstr
+
+        if self.hasdefinitionlst:
+            tempdefinitionlst=list()
+            for speechpartobj in definitionlst:
+                tempdefinitionlst.append(speechpartobj)
+        elif self.hasdefinitionstr:
+            self.definitionlst=list()
+            for token in nltk.tokenize.word_tokenize(self.definitionstr):
+                self.definitionlst.append(\
+                    Word(wordstr=token,definitionstr=None,definitionlst=[],posstr=None,usageset=set()))  
+                
+    def definitionMatches(self):
+        stringfromlst=str()
+        for speechpartobj in self.descriptionlst:
+            if isinstance(speechpartobj,Word):
+                if len(self.descriptionstr)>0:
+                    self.descriptionstr+=' '
+                stringfromlst+=speechpartobj.wordstr                
+        return self.descriptionstr==stringfromlst
+
+
+                
+                
+                
+                  
+
+        
+
+
+
+
+class PhraseCompare:
+    def __init__(self,*,phrasestr=None,phraselst=None):
+        self.hasphrasestr=False
+        if isinstance(phrasestr,str) and phrasestr != None:
+            self.hasphrasestr=True
+        
+        self.hasphraselst=False
+        if isinstance(phraselst,list) and phraselst != None:
+            self.hasphraselst=True
+            for  speechpartobj in phraselst:
+                if not isinstance(speechpartobj,SpeechPart):
+                    self.hasphraselst=False
+                    break
+
+        if self.hasphrasestr:
+            self.phrasestr=phrasestr
+        elif self.hasphraselst:
+            #build phrasestr from phraselst
+            self.phrasestr=str()
+            for speechpartobj in phraselst:
+                if isinstance(speechpartobj,Word):
+                    if len(self.phrasestr)>0:
+                        self.phrasestr+=' '
+                    self.phrasestr+=speechpartobj.wordstr
+
+        if self.hasphraselst:
+            tempphraselst=list()
+            for speechpartobj in phrasestr:
+                tempphraselst.append(speechpartobj)
+        elif self.hasphrasestr:
+            tokenlist=[token in nltk.tokenize.word_tokenize(self.phrasestr)]
+            for token in nltk.tokenize.word_tokenize(self.phrasestr):
+                self.phraselst.append(\
+                    Word(wordstr=token,definitionstr=None,definitionlst=[],posstr=None,usageset=set()))  
+                
+    def phraseMatches(self):
+        stringfromlst=str()
+        for speechpartobj in self.phraselst:
+            if isinstance(speechpartobj,Word):
+                if len(self.phrasestr)>0:
+                    self.phrasestr+=' '
+                stringfromlst+=speechpartobj.wordstr                
+        return self.phrasestr==stringfromlst
+
+
+
+
+
+
 
 
 
@@ -43,7 +198,7 @@ class POSPhrases:
 
 
 
-class POS:
+class POS(DescriptionCompare):
     """
     Load,create,edit,save Parts of Speech
     A Part of Speech is the gramatical purpose of a word or phrase in a sentence
@@ -65,22 +220,14 @@ class POS:
         return f'{self.posstr}'    
 
     def __init__(self,*,descriptionstr=None,descriptionlst=[],speechpartset=[],posstr=None):
+        DescriptionCompare.__init__(self,descriptionstr=descriptionstr,descriptionlst=descriptionlst)
+        if not DescriptionCompare.descriptionMatches:
+            pass
 
         self.hasposstr=False
         if isinstance(posstr,str) and posstr != None:
             self.hasposstr=True
 
-        self.hasdescriptionstr=False
-        if isinstance(descriptionstr,str) and descriptionstr!=None:
-            self.hasdescriptionstr=True
-
-        self.hasdescriptionlst=False
-        if isinstance(descriptionlst,list) and descriptionlst != None:
-            self.hasdescriptionlst=True
-            for  speechpartobj in descriptionlst:
-                if not isinstance(speechpartobj,SpeechPart):
-                    self.hasdescriptionlst=False
-                    break
 
         self.hasspeechpartset=False
         if isinstance(speechpartset,set) and speechpartset != None:
@@ -93,45 +240,6 @@ class POS:
         if self.hasposstr:
             self.posstr=posstr
         
-        if self.hasdescriptionstr:
-            self.descriptionstr=descriptionstr
-        elif self.hasdescriptionlst:
-            #build descriptionstr from descriptionlst
-            self.descriptionstr=str()
-            for speechpartobj in descriptionlst:
-                if isinstance(speechpartobj,Word):
-                    if len(self.descriptionstr)>0:
-                        self.descriptionstr+=' '
-                    self.descriptionstr+=speechpartobj.wordstr
-        
-        if self.hasdescriptionlst:
-            tempdescriptionlst=list()
-            for speechpartobj in descriptionlst:
-                tempdescriptionlst.append(speechpartobj)
-            tokenlist=[token in nltk.tokenize.word_tokenize(self.descriptionstr)]
-            match=True
-            if len(tokenlist)==len(tempdescriptionlst):
-                for token, speechpartobj in zip(nltk.tokenize.word_tokenize(self.descriptionstr),tempdescriptionlst):
-                    if isinstance(speechpartobj,Word):
-                        if speechpartobj.wordstr!=token:
-                            match=False
-                            break
-                    else:
-                        match=False
-                        break
-            else:
-                match=False
-            if match == False:
-                #create new POS from descriptionlst and create own descriptionlst from descriptionstr
-                newPOS=POS(decriptionstr=None,descriptionlst=descriptionlst,speechpartset=speechpartset,posstr=posstr)
-                for token in nltk.tokenize.word_tokenize(self.descriptionstr):
-                    self.definitionlst.append(\
-                        Word(wordstr=token,definitionstr=None,definitionlst=[],posstr=None,usageset=set()))    
-            else:
-                #use descriptionlst
-                self.descriptionlst=list()
-                for speechpartobj in descriptionlst:
-                    self.descriptionlst.append(speechpartobj)
                             
         if self.hasspeechpartset:
             self.speechpartset=set()
@@ -147,7 +255,7 @@ class POS:
 
 
 
-class SpeechPartGroup:
+class SpeechPartGroup(DescriptionCompare):
     """
     Load,create,edit,save wordgroups
     A SpeechPartGroup is a group of words or phrases that are interchangeable in some way within a text
@@ -170,6 +278,7 @@ class SpeechPartGroup:
 
     def __init__(self,*,descriptionstr= None,descriptionlst=[],\
             usageset=set(),speechpartset=set()):
+        DescriptionCompare.__init__(self,descriptionstr=descriptionstr,descriptionlst=descriptionlst)
         
         self.hasspeechpartset=False
         if isinstance(speechpartset,set) and speechpartset != None:
@@ -187,28 +296,6 @@ class SpeechPartGroup:
                     self.hasusageset=False
                     break
 
-        self.hasdescriptionlst=False
-        if isinstance(descriptionlst,list) and descriptionlst != None:
-            self.hasdescriptionlst=True
-            for  speechpart in descriptionlst:
-                if not isinstance(speechpart,SpeechPart):
-                    self.hasdescriptionlst=False
-                    break
-
-        self.hasdescriptionstr=False
-        if isinstance(descriptionstr,str) and descriptionstr!=None:
-            self.hasdescriptionstr=True
-
-        if self.hasdescriptionstr:
-            self.descriptionstr=descriptionstr
-        elif self.hasdescriptionlst:
-            #build descriptionstr from descriptionlst
-            self.descriptionstr=str()
-            for speechpartobj in descriptionlst:
-                if isinstance(speechpartobj,Word):
-                    if len(self.descriptionstr)>0:
-                        self.descriptionstr+=' '
-                    self.descriptionstr+=speechpartobj.wordstr
         
         if self.hasspeechpartset:
             for speechpartobj in speechpartset:
@@ -218,33 +305,6 @@ class SpeechPartGroup:
             for speechpartobj in usageset:
                 self.usageset.add(speechpartobj)
 
-        if self.hasdescriptionlst:
-            tempdescriptionlst=list()
-            for speechpart in descriptionlst:
-                tempdescriptionlst.append(speechpart)
-            tokenlist=[token in nltk.tokenize.word_tokenize(self.descriptionstr)]
-            match=True
-            if len(tokenlist)==len(tempdescriptionlst):
-                for token, speechpart in zip(nltk.tokenize.word_tokenize(self.descriptionstr),tempdescriptionlst):
-                    if isinstance(speechpart,Word):
-                        if speechpart.wordstr!=token:
-                            match=False
-                            break
-                    else:
-                        match=False
-                        break
-            else:
-                match=False
-            if match == False:
-                #create new speechpart group from descriptionlst and create own descriptionlst from descriptionstr
-                newSpeechPartGroup=SpeechPartGroup(decriptionstr=None,descriptionlst=descriptionlst,usageset=usageset,speechpartset=speechpartset)
-                for token in nltk.tokenize.word_tokenize(self.descriptionstr):
-                    self.definitionlst.append(\
-                        Word(wordstr=token,definitionstr=None,definitionlst=[],posstr=None,usageset=set()))    
-            else:
-                #use descriptionlst
-                for speechpart in descriptionlst:
-                    self.descriptionlst.append(speechpart)
 
 
 
@@ -254,7 +314,7 @@ class SpeechPartGroup:
 
 
 
-class SpeechPart:
+class SpeechPart(DefinitionCompare):
     """
     Load,create,edit,save SpeechPart objects
     A SpeechPart is a superclass of Word and Phrase classes
@@ -271,22 +331,12 @@ class SpeechPart:
 
     def __init__(self,*,definitionstr=None,definitionlst=[], \
             posstr=None,usageset=set(),dictionary=None):
-        
+        DefinitionCompare.__init__(self,definitionstr=definitionstr,definitionlst=definitionlst)        
+
         self.hasposstr=False
         if isinstance(posstr,str) and posstr != None:
             self.hasposstr=True
         
-        self.hasdefinitionstr=False
-        if isinstance(definitionstr,str) and definitionstr!=None:
-            self.hasdefinitionstr=True
-
-        self.hasdefinitionlst=False
-        if isinstance(definitionlst,list) and definitionlst != None:
-            self.hasdefinitionlst=True
-            for  speechpartobj in definitionlst:
-                if not isinstance(speechpartobj,SpeechPart):
-                    self.hasdefinitionlst=False
-                    break
 
         self.hasusageset=False
         if isinstance(usageset,set) and usageset != None:
@@ -296,16 +346,6 @@ class SpeechPart:
                     self.hasusageset=False
                     break
 
-        if self.hasdefinitionstr:
-            self.definitionstr=definitionstr
-        elif self.hasdefinitionlst:
-            #build definitionstr from desfinitionlst
-            self.definitionstr=str()
-            for speechpartobj in definitionlst:
-                if isinstance(speechpartobj,Word):
-                    if len(self.definitionstr)>0:
-                        self.definitionstr+=' '
-                    self.definitionstr+=speechpartobj.wordstr
         
         if self.hasposstr:
             self.posstr=posstr
@@ -314,35 +354,6 @@ class SpeechPart:
             for speechpartobj in usageset:
                 self.usageset.add(speechpartobj)
 
-        if self.hasdefinitionlst:
-            tempdefinitionlst=list()
-            for speechpartobj in definitionstr:
-                tempdefinitionlst.append(speechpartobj)
-            tokenlist=[token in nltk.tokenize.word_tokenize(self.definitionstr)]
-            match=True
-            if len(tokenlist)==len(tempdefinitionlst):
-                for token, speechpartobj in zip(nltk.tokenize.word_tokenize(self.definitionstr),tempdefinitionlst):
-                    if isinstance(speechpartobj,Word):
-                        if speechpartobj.wordstr!=token:
-                            match=False
-                            break
-                    else:
-                        match=False
-                        break
-            else:
-                match=False
-            if match == False:
-                #create new SpeechPart from definitionlst and create own definitionlst from definitionstr
-                newPOS=SpeechPart(decriptionstr=None,definitionlst=definitionlst,usageset=usageset,posstr=posstr)
-                for token in nltk.tokenize.word_tokenize(self.definitionstr):
-                    self.definitionlst.append(\
-                        Word(wordstr=token,definitionstr=None,definitionlst=[],posstr=None,usageset=set()))    
-            else:
-                #use definitionlst
-                self.definitionlst=list()
-                for speechpartobj in definitionlst:
-                    self.definitionlst.append(speechpartobj)
-                            
             
          
                 
@@ -354,7 +365,7 @@ class SpeechPart:
 
 
 
-class Phrase(SpeechPart):
+class Phrase(SpeechPart,PhraseCompare):
     """
     Load,create,edit,save phrases
     A Part Of speech can be occupied by a series of words or other phrases. 
@@ -399,34 +410,12 @@ class Phrase(SpeechPart):
     def __init__(self,*,phrasestr=None,phraselst=[],\
             definitionstr=None,definitionlst=[],\
             usageset=set(),posstr=None,dictionary=None):
+        SpeechPart.__init__(self,definitionstr=definitionstr,definitionlst=definitionlst,posstr=posstr,usageset=usageset,dictionary=dictionary)
+        PhraseCompare.__init__(self,phrasestr=phrasestr,phraselst=phraselst)
 
         self.hasposstr=False
         if isinstance(posstr,str) and posstr != None:
             self.hasposstr=True
-        
-        self.hasdefinitionstr=False
-        if isinstance(definitionstr,str) and definitionstr!=None:
-            self.hasdefinitionstr=True
-
-        self.hasdefinitionlst=False
-        if isinstance(definitionlst,list) and definitionlst != None:
-            self.hasdefinitionlst=True
-            for  speechpartobj in definitionlst:
-                if not isinstance(speechpartobj,SpeechPart):
-                    self.hasdefinitionlst=False
-                    break
-
-        self.hasphrasestr=False
-        if isinstance(phrasestr,str) and phrasestr != None:
-            self.hasphrasestr=True
-        
-        self.hasphraselst=False
-        if isinstance(phraselst,list) and phraselst != None:
-            self.hasphraselst=True
-            for  speechpartobj in phraselst:
-                if not isinstance(speechpartobj,SpeechPart):
-                    self.hasphraselst=False
-                    break
 
         self.hasusageset=False
         if isinstance(usageset,set) and usageset != None:
@@ -436,29 +425,6 @@ class Phrase(SpeechPart):
                     self.hasusageset=False
                     break
 
-        if self.hasdefinitionstr:
-            self.definitionstr=definitionstr
-        elif self.hasdefinitionlst:
-            #build definitionstr from definitionlst
-            self.definitionstr=str()
-            for speechpartobj in definitionlst:
-                if isinstance(speechpartobj,Word):
-                    if len(self.definitionstr)>0:
-                        self.definitionstr+=' '
-                    self.definitionstr+=speechpartobj.wordstr
-        
-        if self.hasphrasestr:
-            self.phrasestr=phrasestr
-        elif self.hasphraselst:
-            #build phrasestr from phraselst
-            self.phrasestr=str()
-            for speechpartobj in phraselst:
-                if isinstance(speechpartobj,Word):
-                    if len(self.phrasestr)>0:
-                        self.phrasestr+=' '
-                    self.phrasestr+=speechpartobj.wordstr
-
-
         if self.hasposstr:
             self.posstr=posstr
         
@@ -466,76 +432,9 @@ class Phrase(SpeechPart):
             for speechpartobj in usageset:
                 self.usageset.add(speechpartobj)
 
-        definitionmatch=False
-        if self.hasdefinitionlst:
-            tempdefinitionlst=list()
-            for speechpartobj in definitionstr:
-                tempdefinitionlst.append(speechpartobj)
-            tokenlist=[token in nltk.tokenize.word_tokenize(self.definitionstr)]
-            match=True
-            if len(tokenlist)==len(tempdefinitionlst):
-                for token, speechpartobj in zip(nltk.tokenize.word_tokenize(self.definitionstr),tempdefinitionlst):
-                    if isinstance(speechpartobj,Word):
-                        if speechpartobj.wordstr!=token:
-                            match=False
-                            break
-                    else:
-                        match=False
-                        break
-            else:
-                match=False
-            if match == False:
-                #create new SpeechPart from definitionlst and create own definitionlst from definitionstr
-                newPhrase=Phrase(decriptionstr=None,definitionlst=definitionlst,usageset=usageset,posstr=posstr)
-                for token in nltk.tokenize.word_tokenize(self.definitionstr):
-                    self.definitionlst.append(\
-                        Word(wordstr=token,definitionstr=None,definitionlst=[],posstr=None,usageset=set()))    
-            else:
-                #use definitionlst
-                definitionmatch=True
-                self.definitionlst=list()
-                for speechpartobj in definitionlst:
-                    self.definitionlst.append(speechpartobj)
-
-        phrasematch=False
-        if self.hasphraselst:
-            tempphraselst=list()
-            for speechpartobj in phrasestr:
-                tempphraselst.append(speechpartobj)
-            tokenlist=[token in nltk.tokenize.word_tokenize(self.phrasestr)]
-            match=True
-            if len(tokenlist)==len(tempphraselst):
-                for token, speechpartobj in zip(nltk.tokenize.word_tokenize(self.phrasestr),tempphraselst):
-                    if isinstance(speechpartobj,Word):
-                        if speechpartobj.wordstr!=token:
-                            match=False
-                            break
-                    else:
-                        match=False
-                        break
-            else:
-                match=False
-            if match == False:
-                #create new SpeechPart from phraselst and create own phraselst from phrasestr
-                newPhrase=Phrase(decriptionstr=None,phraselst=phraselst,usageset=usageset,posstr=posstr)
-                for token in nltk.tokenize.word_tokenize(self.phrasestr):
-                    self.phraselst.append(\
-                        Word(wordstr=token,phrasestr=None,phraselst=[],posstr=None,usageset=set()))    
-            else:
-                #use phraselst
-                phrasematch=True
-                self.phraselst=list()
-                for speechpartobj in phraselst:
-                    self.phraselst.append(speechpartobj)
 
 
 
-        self.phrasestr=phrasestr
-        self.phraselst=list()
-        for speechpartobj in phraselst:
-            self.phraselst.append(speechpartobj)
-        SpeechPart.__init__(self,posstr=posstr,definitionstr=definitionstr\
-            ,definitionlst=definitionlst,usageset=usageset,dictionary=None)
         
 
 
@@ -546,7 +445,7 @@ class Phrase(SpeechPart):
 
 
 
-class Word(SpeechPart):
+class Word(SpeechPart,DefinitionCompare):
     """
     Load,create,edit,save words
     A Part Of speech can be occupied by a word. 
@@ -568,11 +467,39 @@ class Word(SpeechPart):
     def __init__(self,*,wordstr=None,\
             definitionstr=None,definitionlst=[],\
             posstr=None,usageset=set(),dictionary=None):
-        self.wordstr=wordstr
         SpeechPart.__init__(self,posstr=posstr,definitionstr=definitionstr,\
-            definitionlst=definitionlst,usageset=usageset,dictioary=None)
+            definitionlst=definitionlst,usageset=usageset,dictionary=None)
+        DefinitionCompare.__init__(self,definitionstr=definitionstr,definitionlst=definitionlst)
+
+        self.haswordstr=False
+        if isinstance(wordstr,str) and wordstr != None:
+            self.haswordstr=True
+
+        self.hasposstr=False
+        if isinstance(posstr,str) and posstr != None:
+            self.hasposstr=True
+
+        self.hasusageset=False
+        if isinstance(usageset,set) and usageset != None:
+            self.hasusageset=True
+            for speechpartobj in usageset:
+                if not isinstance(speechpartobj,SpeechPart):
+                    self.hasusageset=False
+                    break
+
+        if self.hasposstr:
+            self.posstr=posstr
+        
+        if self.hasusageset:
+            for speechpartobj in usageset:
+                self.usageset.add(speechpartobj)
+
+        if self.haswordstr:
+            self.wordstr=wordstr
+
+
         if dictionary!=None:
-            if posstr=None:
+            if posstr==None:
                 if (self.wordstr,'unknown') in dictionary.entries():
                     print('word is in dictionay')
             else:
@@ -606,15 +533,6 @@ class Usage:
         postspeechpartlst the list of speechparts after the speechpart for which this is a usage of
         sourcestr the string from the corpora that is the source of this usage
     """
-    def isValid(self):
-        sourcestrUnpacked=str()
-        for speechpartobj in self.prespeechpartlst:
-            sourcestrUnpacked+=str(speechpartobj)
-        sourcestrUnpacked+=str(self.thisspeechpartobj)
-        for speechpartobj in self.postspeechpartlst:
-            sourcestrUnpacked+=str(speechpartobj)
-        return sourcestrUnpacked==self.sourcestr
-
     def __repr__(self):
         #build pre part string
         prestring=str()
@@ -633,11 +551,15 @@ class Usage:
 
     def __init__(self,*,corporaobj=None,prespeechpartlst=[],\
             thisspeechpartobj=None,postspeechpartlst=[],sourcestr=None):
+
         self.corpora=corporaobj
+
         self.prespechpartlst=list()
         for speechpartobj in prespeechpartlst:
             self.prespeechpartlst.append(speechpartobj)
+
         self.thisspeechpartobj=thisspeechpartobj
+
         for speechpartobj in postspeechpartlst:
             self.postpeechpartlst.append(speechpartobj)
         self.sourcestr=sourcestr
@@ -652,7 +574,7 @@ class Usage:
 
 
 
-class Corpora:
+class Corpora(DescriptionCompare):
     """
     Load,create,edit,save Corpora 
     A Corpora is a source of text that contain usages of words or phrases within contexts that indicate their POS
@@ -712,7 +634,7 @@ class Corpora:
 
 
 
-class Definition:
+class Definition(DefinitionCompare):
     """
     Load,create,edit,save definitions
     A definition describes a speechpart which can be a word or phrase.
@@ -741,15 +663,27 @@ class Definition:
 
     def __init__(self,*,definitionstr=None,definitionlst=[],\
             posstr=None,speechpartset=set()):
-        self.definitionstr=definitionstr
-        if definitionlst==[]:
-            self.definitionlst=list()
-            for token in nltk.tokenize.word_tokenize(self.definitionstr):
-                self.definitionlst.append(Word(wordstr=token,definitionstr=None,definitionlst=[],posstr=None,usageset=set()))    
-        self.posstr=posstr
-        self.speechpartset=set()
-        for speechpartobj in speechpartset:
-            self.speechpartset.add(speechpartobj)
+        DefinitionCompare.__init__(self,definitionstr=definitionstr,definitionlst=definitionlst)
+
+        self.hasposstr=False
+        if isinstance(posstr,str):
+            self.hasposstr=True
+        
+        self.hasspeechpartset=False
+        if isinstance(speechpartset,set):
+            self.hasspeechpartset=True
+            for speechpartobj in speechpartset:
+                if not isinstance(speechpartobj,Word):
+                    self.hasspeechpartlst=False
+                    break
+            
+        if self.hasposstr:
+            self.posstr=posstr
+
+        if self.hasspeechpartset:
+            self.speechpartset=set()
+            for speechpartobj in speechpartset:
+                self.speechpartset.add(speechpartobj)
 
             
 
@@ -778,7 +712,9 @@ class Dictionary:
         #entry=set()
         #for speechpart in self.speechpartset:
         #    entry.add(speechpart.)
-        return(entry.word for entry in self.speechpartset if isinstance(entry,Word))
+        wordentries=[(entry.wordstr,entry.posstr) for entry in self.speechpartset if isinstance(entry,Word)]
+        phraseentries=[(entry.phrasestr,entry.posstr) for entry in self.speechpartset if isinstance(entry,Phrase)]
+        return(sorted(wordentries+phraseentries))
 
     def addEntry(self,speechpart):
         """
@@ -790,10 +726,19 @@ class Dictionary:
             self.speechpartset.add(speechpart)
     
     def __init__(self,*,dictionaryfle=None,speechpartset=set()):
+        
         self.dictioanryfle=dictionaryfle
-        self.speechpartset=set()
-        for speechpartobj in speechpartset:
-            self.speechpartset.add(speechpartobj)
+        self.hasspeechpartset=False
+        if isinstance(speechpartset,set):
+            self.hasspeechpartset=True
+            for speechpartobj in speechpartset:
+                if not isinstance(speechpartobj,Word):
+                    self.hasspeechpartset=False
+                    break
+        self.speechpartset=set()        
+        if self.hasspeechpartset:
+            for speechpartobj in speechpartset:
+                self.speechpartset.add(speechpartobj)
     
 
 
@@ -804,8 +749,9 @@ class Dictionary:
 
 
 def main():
-    w=Word(wordstr='word',definitionstr='A word',definitionlst=[],posstr='noun',usageset=set())
-
+    d=Dictionary(dictionaryfle=None,speechpartset=None)
+    w=Word(wordstr='word',definitionstr='A word',definitionlst=[],posstr='noun',usageset=set(),dictionary=d)
+    print(d.entries())
     print('Word members\n',w.wordstr,w.definitionstr,w.posstr)
     print('word string:',str(w))
     print(f'word repr:\n{w!r}')
@@ -815,8 +761,8 @@ def main():
     #print(d.definitionstr)
     w=Word(wordstr=w.wordstr,definitionstr=d.definitionstr,definitionlst=[],posstr='noun',usageset=set())
     #print(w.wordstr,w.definitionstr,w.posstr)
-    for word in d.definitionlst:
-        pass
+    #for word in d.definitionlst:
+    #    pass
         #print(word)
 if __name__ == '__main__':
     main()
