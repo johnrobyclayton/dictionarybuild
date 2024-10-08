@@ -4,6 +4,53 @@ from nltk.text import Text
 from nltk.tokenize import word_tokenize
 
 
+class Compare:
+    def __init__(self,*,sstr=None,llst=None):
+        self.hasstr=False
+        if isinstance(sstr,str) and sstr!=None:
+            self.hassstr=True
+
+        self.hasllst=False
+        if isinstance(llst,list) and llst != None:
+            self.hasllst=True
+            for  speechpartobj in llst:
+                if not isinstance(speechpartobj,SpeechPart):
+                    self.hasllst=False
+                    break
+
+        #if no sstr then create sstr from llst
+        if self.hassstr:
+            self.sstr=sstr
+        elif self.hasllst:
+            #build descriptionstr from descriptionlst
+            self.sstr=str()
+            for speechpartobj in llst:
+                if isinstance(speechpartobj,Word):
+                    if len(self.sstr)>0:
+                        self.sstr+=' '
+                    self.sstr+=speechpartobj.wordstr
+
+        #if no descriptionlst then create descriptionlst from descriptionstr
+        if self.hasllst:
+            templlst=list()
+            for speechpartobj in llst:
+                templlst.append(speechpartobj)
+        elif self.hassstr:
+            self.llst=list()
+            for token in nltk.tokenize.word_tokenize(self.sstr):
+                self.llst.append(\
+                    Word(wordstr=token,definitionstr=None,definitionlst=[],posstr=None,usageset=set()))    
+    
+    def Matches(self):
+        stringfromlst=str()
+        for speechpartobj in self.llst:
+            if isinstance(speechpartobj,Word):
+                if len(stringfromlst)>0:
+                    stringfromlst+=' '
+                stringfromlst+=speechpartobj.wordstr                
+        return self.sstr==stringfromlst
+
+
 class DescriptionCompare:
     def __init__(self,*,descriptionstr=None,descriptionlst=None):
 
@@ -92,15 +139,61 @@ class DefinitionCompare:
                 
     def definitionMatches(self):
         stringfromlst=str()
-        for speechpartobj in self.descriptionlst:
+        for speechpartobj in self.definitionlst:
+            if isinstance(speechpartobj,Word):
+                if len(self.definitionstr)>0:
+                    self.definitionstr+=' '
+                stringfromlst+=speechpartobj.wordstr                
+        return self.definitionstr==stringfromlst
+
+class CorporaCompare:
+    
+    def __init__(self,*,corporastr=None,corporalst=None):
+
+        self.hascorporastr=False
+        if isinstance(corporastr,str) and corporastr!=None:
+            self.hascorporastr=True
+
+        self.hascorporalst=False
+        if isinstance(corporalst,list) and corporalst != None:
+            self.hascorporalst=True
+            for  corporaobj in corporalst:
+                if not isinstance(corporaobj,Corpora):
+                    self.hascorporalst=False
+                    break
+
+        #if no corporastr fill corporastr with corporalst
+        if self.hascorporastr:
+            self.corporastr=corporastr
+        elif self.hascorporalst:
+            #build corporastr from corporalst
+            self.corporastr=str()
+            for speechpartobj in corporalst:
+                if isinstance(speechpartobj,Corpora):
+                    if len(self.corporastr)>0:
+                        self.corporastr+=' '
+                    self.corporastr+=speechpartobj.wordstr
+
+        if self.hascorporalst:
+            tempcorporalst=list()
+            for speechpartobj in corporalst:
+                tempcorporalst.append(speechpartobj)
+        elif self.hascorporastr:
+            self.corporalst=list()
+            for token in nltk.tokenize.word_tokenize(self.corporastr):
+                self.corporalst.append(\
+                    Word(wordstr=token,definitionstr=None,definitionlst=[],posstr=None,usageset=set()))  
+                
+    def corporaMatches(self):
+        stringfromlst=str()
+        for speechpartobj in self.corporalst:
             if isinstance(speechpartobj,Word):
                 if len(self.descriptionstr)>0:
                     self.descriptionstr+=' '
                 stringfromlst+=speechpartobj.wordstr                
-        return self.descriptionstr==stringfromlst
-
-
-                
+        return self.corporastr==stringfromlst
+               
+                               
                 
                 
                   
@@ -580,7 +673,7 @@ class Usage:
 
 
 
-class Corpora(DescriptionCompare):
+class Corpora(DescriptionCompare,CorporaCompare):
     """
     Load,create,edit,save Corpora 
     A Corpora is a source of text that contain usages of words or phrases within contexts that indicate their POS
@@ -588,6 +681,8 @@ class Corpora(DescriptionCompare):
     A Corpora can be represented as a list of SpeechParts
     A Corpora can be represented as a string of text, a list of strings of text.
     A corpora can be stored in a file
+    A Corpora would not be a large size. Maximum 100kB. A book made up of Chapters. A Chapter would be a single Corpora.
+        A Corpora only needs to be large enough to provide enough information to unambibuously identify the meaning of each word or phrase. 
     Members:
     corporastr a string representation of the corpora
     corporalst a list of speechparts representing the corpora
@@ -618,6 +713,8 @@ class Corpora(DescriptionCompare):
     def __init__(self,*,corporastr=None,corporalst=[],\
             descriptionstr=None,descriptionlst=[],\
             namestr=None,metadatastr=None,filespec=None):
+        DescriptionCompare.__init__(descriptionstr=descriptionstr,descriptionlst=descriptionlst)
+        CorporaCompare.__init__(corporastr=corporastr,corporalst=corporalst)
         self.corporastr=corporastr
         self.corporalst=list()
         for speechpartobj in corporalst:
@@ -714,7 +811,7 @@ class Dictionary:
         dictionaryobj a dictionary object
         speechpartset a set of speechparts that make up a dictionary
     """
-    def entries(self):
+    def listSpeechPartEntries(self):
         #entry=set()
         #for speechpart in self.speechpartset:
         #    entry.add(speechpart.)
@@ -722,7 +819,7 @@ class Dictionary:
         phraseentries=[(entry.phrasestr,entry.posstr) for entry in self.speechpartset if isinstance(entry,Phrase)]
         return(sorted(wordentries+phraseentries))
 
-    def addEntry(self,speechpart):
+    def addSpeechPartEntry(self,speechpart):
         """
         Add a speechpart to the dictionary.
         Args:
@@ -731,7 +828,7 @@ class Dictionary:
         if isinstance(speechpart, SpeechPart):
             self.speechpartset.add(speechpart)
     
-    def __init__(self,*,dictionaryfle=None,speechpartset=set()):
+    def __init__(self,*,dictionaryfle=None,speechpartset=set(),posset=set(),posphraseset=set(),grammarset=set()):
         
         self.dictioanryfle=dictionaryfle
         self.hasspeechpartset=False
@@ -741,12 +838,37 @@ class Dictionary:
                 if not isinstance(speechpartobj,Word):
                     self.hasspeechpartset=False
                     break
+        
         self.speechpartset=set()        
         if self.hasspeechpartset:
             for speechpartobj in speechpartset:
                 self.speechpartset.add(speechpartobj)
     
+        self.hasposset=False
+        if isinstance(posset,set):
+            self.hasposset=True
+            for posobj in posset:
+                if not isinstance(posobj,POS):
+                    self.hasposset=False
+                    break
+        
+        self.posset=set()        
+        if self.hasposset:
+            for posobj in posset:
+                self.posset.add(posobj)
 
+        self.hasposphraseset=False
+        if isinstance(posphraseset,set):
+            self.hasposphraseset=True
+            for posphraseobj in posphraseset:
+                if not isinstance(posphraseobj,POS):
+                    self.hasposphraseset=False
+                    break
+        
+        self.posphraseset=set()        
+        if self.hasposphraseset:
+            for posobj in posphraseset:
+                self.posset.add(posphraseobj)
 
 
 
@@ -755,9 +877,11 @@ class Dictionary:
 
 
 def main():
-    d=Dictionary(dictionaryfle=None,speechpartset=None)
-    w=Word(wordstr='word',definitionstr='A word',definitionlst=[],posstr='noun',usageset=set(),dictionary=d)
-    print('d',d.entries())
+    c=Compare(sstr='a aa aaa b bb bbb',llst=['a','aa','aaa','b','bb','bbb'])
+    print
+    #d=Dictionary(dictionaryfle=None,speechpartset=None)
+    #w=Word(wordstr='word',definitionstr='A word',definitionlst=[],posstr='noun',usageset=set(),dictionary=d)
+    #print('d',d.entries())
     #print('Word members\n',w.wordstr,w.definitionstr,w.posstr)
     #print('word string:',str(w))
     #print(f'word repr:\n{w!r}')
