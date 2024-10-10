@@ -55,7 +55,7 @@ class Grammar:
 
 
 
-class POSPhrases:
+class POSPhrase:
     """
     Store sequences of Parts Of Speech observed in Corpora
     For example: "The cat sat on the mat" woul becoem:
@@ -71,8 +71,66 @@ class POSPhrases:
     his shirt
     her shoes
     their ball
+    Members:
+        posphrasestr a string of the POS strings that make up the POSPhrase
+            Examples: 'Article Noun Verb Preposition Article Noun" which is the POSPhrase for 
+            "The cat sat on the mat" 
+        poslst
     """
     pass
+    def __repr__(self,depth):
+        if depth>0:
+            depth-=1
+            return f"POS:{{"+\
+                f"posstr:'{self.posstr}',"+\
+                f"definitionstr:'{self.definitionstr}',"+\
+                f"definitionlst:["+", ".join([word.__repr__(depth) for word in self.definitionlst])+"],"+\
+                f"speechpartset:("+", ".join([speechpart.__repr__(depth) for speechpart in self.speechpartset])+")"+\
+                f"}}"
+        else:
+            return f"Phrase:{{"+\
+                f"posstr:'{self.posstr}',"+\
+                f"definitionstr:'{self.definitionstr}',"+\
+                f"}}"
+            
+            
+            
+    def __str__(self):
+        return f'{self.posstr}'    
+
+    def __init__(self,*,descriptionstr=None,descriptionlst=[],speechpartset=set(),posstr=None):
+
+        Compare.__init__(self,sstr=descriptionstr,llst=descriptionlst)
+        self.descriptionstr=self.sstr
+        self.descriptionlst=self.llst
+        self.descriptionMatches=Compare.Matches(self)
+
+        self.speechpartset = speechpartset if isinstance(speechpartset, set) and speechpartset != set() else set()
+        self.hasspeechpartset = isinstance(self.speechpartset, set) and self.speechpartset != set() and all(isinstance(obj, SpeechPart) for obj in self.speechpartset)
+
+        self.hasposstr=False
+        if isinstance(posstr,str) and posstr != None:
+            self.hasposstr=True
+        '''
+        self.hasspeechpartset=False
+        if isinstance(speechpartset,set) and speechpartset != None:
+            self.hasspeechpartset=True
+            for speechpartobj in speechpartset:
+                if not isinstance(speechpartobj,SpeechPart):
+                    self.hasespeechpartset=False
+                    break
+        '''            
+        if self.hasposstr:
+            self.posstr=posstr
+        
+                            
+        if self.hasspeechpartset:
+            self.speechpartset=set()
+            for speechpartobj in speechpartset:
+                self.speechpartset.add(speechpartobj)
+
+
+
 
 
 
@@ -96,15 +154,18 @@ class POS(Compare):
     def __repr__(self,depth):
         if depth>0:
             depth-=1
-            return f''+\
-                f'descriptionstr:{self.descriptionstr}'+\
-                f'descriptionlst:{[word.__repr__(depth) for word in self.descriptionlst]}'+\
-                f'speechpartset:{[speechpart.__repr__(depth) for speechpart in self.speechpartset]}'+\
-                f'posstr:{self.posstr}'
+            return f"POS:{{"+\
+                f"posstr:'{self.posstr}',"+\
+                f"definitionstr:'{self.definitionstr}',"+\
+                f"definitionlst:["+", ".join([word.__repr__(depth) for word in self.definitionlst])+"],"+\
+                f"speechpartset:("+", ".join([speechpart.__repr__(depth) for speechpart in self.speechpartset])+")"+\
+                f"}}"
         else:
-            return f''+\
-                f'descriptionstr:{self.descriptionstr}'+\
-                f'posstr:{self.posstr}'
+            return f"Phrase:{{"+\
+                f"posstr:'{self.posstr}',"+\
+                f"definitionstr:'{self.definitionstr}',"+\
+                f"}}"
+            
             
             
     def __str__(self):
@@ -166,14 +227,19 @@ class SpeechPartGroup(Compare):
     def __repr__(self,depth):
         if depth>0:
             depth-=1
-            return f''+\
-                f'descriptionstr:{self.descriptionstr}'+\
-                f'descriptionlst:{[word.__repr__(depth) for word in self.descriptionlst]}'+\
-                f'usageset:{[usage.__repr__(depth) for usage in self.usageset]}'
+            return f"SpeechPartGroup:{{"+\
+                f"definitionstr:'{self.definitionstr}',"+\
+                f"definitionlst:["+", ".join([word.__repr__(depth) for word in self.definitionlst])+"],"+\
+                f"usageset:("+", ".join([usage.__repr__(depth) for usage in self.usageset])+")"+\
+                f"speechpartset:("+", ".join([speechpart.__repr__(depth) for speechpart in self.speechpartset])+")"+\
+                f"}}"
         else:
-            return f''+\
-                f'descriptionstr:{self.descriptionstr}'
-            
+            return f"Phrase:{{"+\
+                f"phrasestr:'{self.wordstr}',"+\
+                f"definitionstr:'{self.definitionstr}',"+\
+                f"posstr:'{self.posstr}'"+\
+                f"}}"
+                        
     def __str__(self):
         return f'{self.descriptionstr}'    
 
@@ -232,7 +298,43 @@ class SpeechPart(Compare):
         posstr the string identifying its part of speech
         usageset the set of usage objects that describe where this SpeechPart shows in corpora
     """    
-
+    def __repr__(self,depth):
+        if isinstance(self,Word):
+            if depth>0:
+                depth-=1
+                depth-=1
+                return f"Word:{{"+\
+                    f"wordstr:'{self.wordstr}',"+\
+                    f"definitionstr:'{self.definitionstr}',"+\
+                    f"definitionlst:["+", ".join([word.__repr__(depth) for word in self.definitionlst])+"],"+\
+                    f"posstr:'{self.posstr}',"+\
+                    f"usageset:("+", ".join([usage.__repr__(depth) for usage in self.usageset])+")"+\
+                    f"}}"
+            else:
+                return f"Word:{{"+\
+                    f"wordstr:'{self.wordstr}',"+\
+                    f"definitionstr:'{self.definitionstr}',"+\
+                    f"posstr:'{self.posstr}'"+\
+                    f"}}"
+        elif isinstance(self,Phrase):
+            if depth>0:
+                depth-=1
+                return f"Phrase:{{"+\
+                    f"phrasestr:'{self.phrasestr}',"+\
+                    f"phraselst:"+", [[".join([word.__repr__(depth) for word in self.phraselst])+f"]]"+\
+                    f"definitionstr:'{self.definitionstr}',"+\
+                    f"definitionlst:["+", ".join([word.__repr__(depth) for word in self.definitionlst])+"],"+\
+                    f"posstr:'{self.posstr}',"+\
+                    f"usageset:("+", ".join([usage.__repr__(depth) for usage in self.usageset])+")"+\
+                    f"}}"
+            else:
+                return f"Phrase:{{"+\
+                    f"phrasestr:'{self.wordstr}',"+\
+                    f"definitionstr:'{self.definitionstr}',"+\
+                    f"posstr:'{self.posstr}'"+\
+                    f"}}"
+    
+            
     def __init__(self,*,definitionstr=None,definitionlst=[], \
             posstr=None,usageset=set(),dictionary=None):
         Compare.__init__(self,sstr=definitionstr,llst=definitionlst)
@@ -309,18 +411,20 @@ class Phrase(SpeechPart,Compare):
     def __repr__(self,depth):
         if depth>0:
             depth-=1
-            return f''+\
-                f'phrasestr:{self.phrasestr}'+\
-                f'phraselst:{[word.__repr__(depth) for word in self.phraselst]}'+\
-                f'definitionstr:{self.definitionstr}'+\
-                f'definitionlst:{[word.__repr__(depth) for word in self.definitionlst]}'+\
-                f'posstr:{self.posstr}'+\
-                f'usageset:{[usage.__repr__(depth) for usage in self.usageset]}'
+            return f"Phrase:{{"+\
+                f"phrasestr:'{self.phrasestr}',"+\
+                f"phraselst:"+", [[".join([word.__repr__(depth) for word in self.phraselst])+f"]]"+\
+                f"definitionstr:'{self.definitionstr}',"+\
+                f"definitionlst:["+", ".join([word.__repr__(depth) for word in self.definitionlst])+"],"+\
+                f"posstr:'{self.posstr}',"+\
+                f"usageset:("+", ".join([usage.__repr__(depth) for usage in self.usageset])+")"+\
+                f"}}"
         else:
-            return f''+\
-                f'phrasestr:{self.phrasestr}'+\
-                f'definitionstr:{self.definitionstr}'+\
-                f'posstr:{self.posstr}'
+            return f"Phrase:{{"+\
+                f"phrasestr:'{self.wordstr}',"+\
+                f"definitionstr:'{self.definitionstr}',"+\
+                f"posstr:'{self.posstr}'"+\
+                f"}}"
             
     def __str__(self):
         return f'{self.phrasestr}'    
@@ -383,15 +487,15 @@ class Word(SpeechPart,Compare):
     def __repr__(self,depth):
         if depth>0:
             depth-=1
-            return f"word:{{"+\
+            return f"Word:{{"+\
                 f"wordstr:'{self.wordstr}',"+\
                 f"definitionstr:'{self.definitionstr}',"+\
-                f"definitionlst:"+", ".join([word.__repr__(depth) for word in self.definitionlst])+\
+                f"definitionlst:["+", ".join([word.__repr__(depth) for word in self.definitionlst])+"],"+\
                 f"posstr:'{self.posstr}',"+\
-                f"usageset:"+", ".join([usage.__repr__(depth) for usage in self.usageset])+\
+                f"usageset:("+", ".join([usage.__repr__(depth) for usage in self.usageset])+")"+\
                 f"}}"
         else:
-            return f"word:{{"+\
+            return f"Word:{{"+\
                 f"wordstr:'{self.wordstr}',"+\
                 f"definitionstr:'{self.definitionstr}',"+\
                 f"posstr:'{self.posstr}'"+\
@@ -446,7 +550,16 @@ class Word(SpeechPart,Compare):
         self.dictionary=Dictionary()
         if self.hasdictionary:
             self.dictionary=dictionary
-  
+        if self.hasdictionary:
+            if self not in dictionary.speechpartset:
+                dictionary.speechpartset.add(self)
+            
+        '''for speechpart in dictionary.speechpartset:
+            if isinstance(speechpart,Word):
+                print(speechpart.wordstr, speechpart.definitionstr)
+            if isinstance(speechpart,Phrase):
+                print(speechpart.phrasestr,speechpart.definitionstr)
+        '''
 
 
 
@@ -471,18 +584,25 @@ class Usage:
         postspeechpartlst the list of speechparts after the speechpart for which this is a usage of
         sourcestr the string from the corpora that is the source of this usage
     """
-    def __repr__(self):
-        #build pre part string
-        prestring=str()
-        for speechpartobj in self.prespeechpartlst:
-            presrint+=str(speechpartobj)
-        thisstring=str(self.thisspeechpartobj)
-        poststring=str()
-        for speechpartobj in self.postspeechpartlst:
-            poststring+=str(speechpartobj)
-        return f'Pre speech:{prestring}\
-            \nThis speech:{thisstring}\
-            \nPost speech:{poststring}'
+
+    def __repr__(self,depth):
+        if depth>0:
+            depth-=1
+            return f"Usage:{{"+\
+                f"corporaobj:'{self.corporaobj.__repr__(depth)}',"+\
+                f"prespeechpartlst:["+", ".join([word.__repr__(depth) for word in self.prespeechpartlst])+"],"+\
+                f"thisspeechpartobj:'{self.thisspeechpartobj.__repr__(depth)}',"+\
+                f"postspeechpartlst:["+", ".join([word.__repr__(depth) for word in self.postspeechpartlst])+"],"+\
+                f"sourcestr:'{self.sourcestr}',"+\
+                f"}}"
+        else:
+            return f"Usage:{{"+\
+                f"corporaobj:'{self.corporaobj.__repr__(0)}',"+\
+                f"sourcestr:'{self.sourcestr}',"+\
+                f"}}"
+            
+
+ 
             
     def __str__(self):
         return f'{self.sourcestr}'    
@@ -531,20 +651,30 @@ class Corpora(Compare):
     metadatastr a string that contains the mettadata for the corpora
     filespec the specitifation of the file containing the corpora
     """        
-    def isValid(self):
-        descriptionlstUnpacked=str()
-        for speechpartobj in self.descriptionlst:
-            descriptionlstUnpacked+=str(speechpartobj)
-        corporalstUnpacked=str()
-        for speechpartobj in self.corporalst:
-            phraselstUnpacked+=str(speechpartobj)
-        return self.descriptionstr==descriptionlstUnpacked and \
-            self.corporastr==corporalstUnpacked
 
-    def __repr__(self):
-        return f'Corpora:{self.namestr}\
-            \nDescription:{self.descriptionstr}\
-            \nPost speech:{self.corporastr}'
+    def __repr__(self,depth):
+        if depth>0:
+            depth-=1
+            return f"Corpora:{{"+\
+                f"namestr:'{self.namestr}',"+\
+                f"metadatastr:'{self.metadatastr}',"+\
+                f"descriptionstr:'{self.descriptionstr}',"+\
+                f"descriptionlst:["+", ".join([word.__repr__(depth) for word in self.descriptionlst])+"],"+\
+                f"corporastr:'{self.corporastr}',"+\
+                f"corporalst:["+", ".join([word.__repr__(depth) for word in self.corporalst])+"],"+\
+                f"filespec:'{self.filespec.__repr__()}',"+\
+                f"}}"
+        else:
+            return f"Word:{{"+\
+                f"namestr:'{self.namestr}',"+\
+                f"metadatastr:'{self.metadatastr}',"+\
+                f"descriptionstr:'{self.descriptionstr}',"+\
+                f"corporastr:'{self.corporastr}',"+\
+                f"filespec:'{self.filespec.__repr__()}',"+\
+                f"}}"
+            
+
+
             
     def __str__(self):
         return f'{self.namestr}'    
@@ -594,6 +724,21 @@ class Definition(Compare):
         definitionlst a list of speechparts that make up the definition
         speechpartset the set of speechparts that have this definition
     """
+    def __repr__(self,depth):
+        if depth>0:
+            depth-=1
+            return f"Word:{{"+\
+                f"definitionstr:'{self.definitionstr}',"+\
+                f"definitionlst:["+", ".join([word.__repr__(depth) for word in self.definitionlst])+"],"+\
+                f"posstr:'{self.posstr}',"+\
+                f"speechpartset:("+", ".join([usage.__repr__(depth) for usage in self.speechpartset])+")"+\
+                f"}}"
+        else:
+            return f"Word:{{"+\
+                f"definitionstr:'{self.definitionstr}',"+\
+                f"posstr:'{self.posstr}'"+\
+                f"}}"
+            
     def isValid(self):
         definitionlstUnpacked=str()
         for speechpartobj in self.definitionlst:
@@ -656,6 +801,29 @@ class Dictionary:
         dictionaryobj a dictionary object
         speechpartset a set of speechparts that make up a dictionary
     """
+    def __repr__(self,depth=0):
+        if depth>0:
+            depth-=1
+            return f"Word:{{"+\
+                f"dictionaryfle:'{self.dictionaryfle}',"+\
+                f"speechpartset:("+", ".join([speechpart.__repr__(depth) for speechpart in self.speechpartset])+")"+\
+                f"posset:("+", ".join([POS.__repr__(depth) for POS in self.posset])+")"+\
+                f"posphraseset:("+", ".join([POSPhrase.__repr__(depth) for POSPhrase in self.posphraseset])+")"+\
+                f"gammarset:("+", ".join([Grammar.__repr__(depth) for Grammar in self.grammarset])+")"+\
+                f"definitionstr:'{self.definitionstr}',"+\
+                f"definitionlst:["+", ".join([word.__repr__(depth) for word in self.definitionlst])+"],"+\
+                f"posstr:'{self.posstr}',"+\
+                f"speechpartset:("+", ".join([speechpart.__repr__(depth) for speechpart in self.speechpartset])+")"+\
+                f"}}"
+        else:
+            return f"Word:{{"+\
+                f"wordstr:'{self.wordstr}',"+\
+                f"definitionstr:'{self.definitionstr}',"+\
+                f"posset:("+", ".join([POS.__repr__(depth) for POS in self.posset])+")"+\
+                f"posstr:'{self.posstr}'"+\
+                f"speechpartset:("+", ".join([speechpart.__repr__(depth) for speechpart in self.speechpartset])+")"+\
+                f"}}"
+                
     def listSpeechPartEntries(self):
         #entry=set()
         #for speechpart in self.speechpartset:
@@ -676,6 +844,7 @@ class Dictionary:
     def __init__(self,*,dictionaryfle=None,speechpartset=set(),posset=set(),posphraseset=set(),grammarset=set()):
         
         self.dictioanryfle=dictionaryfle
+        
         self.hasspeechpartset=False
         if isinstance(speechpartset,set):
             self.hasspeechpartset=True
@@ -684,10 +853,6 @@ class Dictionary:
                     self.hasspeechpartset=False
                     break
         
-        self.speechpartset=set()        
-        if self.hasspeechpartset:
-            for speechpartobj in speechpartset:
-                self.speechpartset.add(speechpartobj)
     
         self.hasposset=False
         if isinstance(posset,set):
@@ -696,11 +861,6 @@ class Dictionary:
                 if not isinstance(posobj,POS):
                     self.hasposset=False
                     break
-        
-        self.posset=set()        
-        if self.hasposset:
-            for posobj in posset:
-                self.posset.add(posobj)
 
         self.hasposphraseset=False
         if isinstance(posphraseset,set):
@@ -709,6 +869,17 @@ class Dictionary:
                 if not isinstance(posphraseobj,POS):
                     self.hasposphraseset=False
                     break
+
+        
+        self.posset=set()        
+        if self.hasposset:
+            for posobj in posset:
+                self.posset.add(posobj)
+
+        if self.hasspeechpartset:
+            self.speechpartset=set()        
+            for speechpartobj in speechpartset:
+                self.speechpartset.add(speechpartobj)
         
         self.posphraseset=set()        
         if self.hasposphraseset:
@@ -724,13 +895,14 @@ class Dictionary:
 def main():
     #c=Compare(sstr='a aa aaa b bb bbb',llst=['a','aa','aaa','b','bb','bbb'])
     #print
-    #d=Dictionary(dictionaryfle=None,speechpartset=None)
-    w=Word(wordstr='word',definitionstr='A word',definitionlst=[],posstr='noun',usageset=set(),dictionary=None)
+    d=Dictionary(dictionaryfle=None,speechpartset=None)
+    w=Word(wordstr='word',definitionstr='A word',definitionlst=[],posstr='noun',usageset=set(),dictionary=d)
     #print('d',d.entries())
     print('Word members\n',w.wordstr,w.definitionstr,w.posstr)
     print('word string:',str(w))
     print(f'word repr:\n{w.__repr__(1)}')
     print(w.definitionMatches)
+    print(d.__repr__())
     #p=Phrase(phrasestr='long word',definitionstr='A long word',definitionlst=[],posstr='noun',usageset=set())
     #print(p.phrasestr,p.definitionstr,p.posstr)
     #d=Definition(definitionstr='A string of text that has no spaces and has a meaning',definitionlst=[],posstr='noun',speechpartset=set())
