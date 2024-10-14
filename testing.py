@@ -2,51 +2,38 @@ import nltk
 from nltk.tokenize import word_tokenize
 from textwrap import dedent
 
-class Compare:
-    def __init__(self, *, sstr=None, llst=[]):
-        # Initialize self.sstr and self.llst early
-        self.sstr = sstr if isinstance(sstr, str) and sstr != None else ''
-        self.llst = llst if isinstance(llst, list) and llst != [] else []
+class POS():
 
-        # Check if sstr is a valid string
-        self.hasstr = isinstance(self.sstr, str) and self.sstr != ''
-        # Check if llst is a valid list and contains only Word objects
-        self.haslst = isinstance(self.llst, list) and self.llst != [] and all(isinstance(obj, Word) for obj in self.llst)
-        # If no string provided, create it from the list
-        if not self.hasstr and self.haslst:
-            self.sstr = ' '.join([speechpartobj.wordstr for speechpartobj in self.llst])
-
-        # If no list provided, tokenize the string and create Word objects
-        if not self.haslst and self.hasstr:
-            self.llst = [Word(wordstr=token) for token in word_tokenize(self.sstr)]
-
-
-class Phrase(Compare):
     def __repr__(self):
-        return f''+\
-            'Phrase:{self.phrasestr}\n'+\
-            'Part Of Speech:{self.posstr}\n'+\
-            'Definition String:{self.definitionstr}\n'+\
-            'Definition List:{self.definitionlst}\n'
+        return f'''
+            'POSstr:{self.POSstr}\n'+\
+            'Definition:{self.descriptionlst}\n'+\n'''
 
-    def __str__(self):
-        return f'{self.phrasestr}'    
+    def __init__(self, *, POSstr=None, descriptionlst=[]):
+        self.POSstr = POSstr if isinstance(POSstr, str) and POSstr != None else ''
+        self.hasPOSstr = isinstance(self.POSstr, str) and self.POSstr != ''
 
-    def __init__(self, *, phrasestr=None, phraselst=[], definitionstr=None, definitionlst=[],posstr=None):
-        Compare.__init__(self,sstr=phrasestr, llst=phraselst)
-        self.phrasestr = self.sstr
-        self.phraselst = self.llst
-        Compare.__init__(self,sstr=definitionstr, llst=definitionlst)
-        self.definitionstr = self.sstr
-        self.definitionlst = self.llst
-        self.posstr = posstr
+        self.descriptionlst = descriptionlst if isinstance(descriptionlst, list) and descriptionlst != set() else set()
+        self.hasdescriptionlst = isinstance(self.descriptionlst, set) and self.descriptionlst != list() and all(isinstance(obj, Word) for obj in self.descriptionlst)
 
+class Definition():
+    def __repr__(self):
+        return f'''
+            'definitionstr:{self.definitionlst}\n'+\
+            'POSobj:{self.POSobj.__repr__()}\n'+\n'''
 
-class Word(Compare):
+    def __init__(self, *, efinitionstr=None, POSobj=None):
+        self.POSstr = definitionlst if isinstance(definitionstr, str) and POSstr != None else ''
+        self.hasPOSstr = isinstance(self.POSstr, str) and self.POSstr != ''
+
+        self.descriptionlst = descriptionlst if isinstance(descriptionlst, list) and descriptionlst != set() else set()
+        self.hasdescriptionlst = isinstance(self.descriptionlst, set) and self.descriptionlst != list() and all(isinstance(obj, Word) for obj in self.descriptionlst)
+
+class Word():
     def __repr__(self):
         return f'''
             'Word:{self.wordstr}\n'+\
-            'PartOfSpeech:{self.posstr}\n'+\
+            'Definition:{self.definitionobj}\n'+\
             'Definition string:{self.definitionstr}\n'+\
             'Definition List:{self.definitionlst}\n'''
 
