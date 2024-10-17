@@ -1,21 +1,20 @@
-"A","1","indefinite article","It is used before nouns of the singular number only and signifies one or any but somewhat less emphatically.","'I actioned a thing'; 'he walked a mile'; 'she opened a door'"
-"A","1","distributive article","It has a distributive force and is equivalent to each every.","'twice a minute'; 'once a day'; 'one shilling a pound'"
+"A","1","indefinite article","It is used before nouns of the singular number only and signifies one of any but somewhat less emphatically.","'I actioned a thing'; 'he walked a mile'; 'she opened a door'"
+"A","1","distributive article","It has a distributive force and is equivalent to 'for every' in any 'value for every other value'.","'twice a minute'; 'once a day'; 'one shilling a pound';'one day a year';'two weeks a month'"
 "An","2","indefinite article","It is used before nouns of the singular number only and signifies one or any but somewhat less emphatically.","'I actioned an idea'; 'he walked an hour'; 'she opened an arbour'"
-"An","2","distributive article","it has a distributive force and is equivalent to each every.","'twice an hour'; 'once an eon'; 'one shilling an ounce'"
+"An","2","distributive article","It has a distributive force and is equivalent to 'for every' in any 'value for every other value'.","'twice an hour'; 'once an eon'; 'one shilling an ounce'"
 "The","3","definite article.","A word placed before nouns to limit or individualize their meaning.","'the cat sat on the mat'; 'the cow jumped over the moon'"
 "Adjective","9","noun","A word used with a noun or substantive to express a quality of the thing named or something attributed to it or to limit or define it or to specify or describe a thing as distinct from something else. Thus in phrase 'a wise ruler', 'wise' is the adjective expressing a property of 'ruler'.","The adjective goes before the noun'; 'the adjective describes the noun'; 'an adjective can be found in an adjectival phrase'"
-"Adjectives","9","plural:Adjective","Words used with a noun or substantive to express some qualites of the thing named or something attributed to it or to limit or define it or to specify or describe a thing as distinct from something else. Thus in phrase 'a wise, benevolent ruler', 'wise, benevolent' are the adjectives expressing the properties of a 'ruler'.","adjectives go before nouns'; 'adjectives describes nouns'; 'adjectives can be found in an adjectival phrase'"
+"Adjectives","9","plural","Adjective","adjectives go before nouns'; 'adjectives describes nouns'; 'adjectives can be found in an adjectival phrase'"
 "Word","4","noun","The written or printed character or combination of characters expressing a conception or an idea; as the words on a page; a constituent part of a sentence; a term;","'a word is a part of speech'; 'this word has 4 letters'"
-"Words","4","plural:Word","The written or printed character or combination of characters expressing a conception or an idea; as the words on a page; a constituent part of a sentence; a term;","'a word is a part of speech'; 'this word has 4 letters'"
+"Words","4","plural","Word","'many words are a part of speech'; 'many word have 4 letters'"
 "This","4","pronoun","As a demonstrative pronoun this denotes something that is present or near in place or time or something just mentioned or that is just about to be mentioned.","'this is mine'; 'this belongs to you'; 'this is not correct'"
 "This","4","adjective","As an adjective 'this' has the same demonstrative force as the pronoun but is followed by a noun","'this book'; 'this way to town'"
 "It","2","pronoun","As a substitute for any noun of the neuter gender.","'it is here';'it is used before nouns';'it is the indefinite article'"
-"Is","2","verb-present","The third person singular of the substantive verb","'as he is here'; 'she is a woman'"
-"Be","2","verb-future","To exist in a certain manner or relation as a reality or as a product of thought; to exist as the subject of a certain predicate that is as having a certain attribute or as belonging to a certain sort or as identical with what is specified; a word or words for the predicate being annexed","'to be happy'; 'to be here'; 'to be large or strong'; 'to be an animal'; 'to be a hero'; 'to be a nonentity'; 'three and two would be five'; 'annihilation would be the cessation of existence'; 'that would be the woman'"
-"Be","2","verb-future","The third person singular of the substantive verb","'she will be here'; 'you can be a good person'"
+"Is","2","verb","The third person singular of the substantive verb","'as he is here'; 'she is a woman'"
+"Be","2","future","is","'she will be here'; 'you can be a good person'"
 "Uses","3","Verb","The act of employing anything  or of applying it to one's service; the state of being so employed or applied; application; employment; conversion to some purpose","'as the use of a pen in writing'; 'his machines are in general use'"
-"Use","3","verb-future","To make use of; to convert to one's service; to avail one's self of; to employ; to put a purpose","'to use a plow'; 'to use a chair'; 'will use time'; 'can use flour for food'; 'should use water for irrigation'"
-"Using","3","verb-present","To make use of; to convert to one's service; to avail one's self of; to employ; to put a purpose","'using a plow'; 'using a chair'; 'using time'; 'using flour for food'; 'using water for irrigation'"
+"Use","3","future","uses","'to use a plow'; 'to use a chair'; 'he will use walking'; 'she can use flour for food'; 'you should use water for irrigation'"
+"Using","3","present","uses","'will be using a plow'; 'to be using a chair'; 'can be using time'; 'should be using flour for food'; 'might be using water for irrigation'"
 "Used","4","verb-past","To make use of; to convert to one's service; to avail one's self of; to employ; to put to a purpose","'used a plow'; 'used a chair'; 'used time'; 'used flour for food'; 'used water for irrigation'"
 "Before","6","preposition","In front of; preceding in space; ahead of" 'to stand before the fire'; 'before the house';'it is used before nouns of the singular number'"
 "Noun","4","noun","A word used as the designation or appellation of a creature or thing existing in fact or in thought; a substantive.","'the subject of a sentence can be a noun'; 'the object of a sentence can be a noun'; 'a noun is a word in a sentence designating a thing'"
@@ -36,6 +35,26 @@
 "Somewhat","8","adverb","In some degree or measure; a little.","'he is somewhat tall';'the indefinite article is somewhat less emphatic than a direct statement of one of many'"
 "Less","4","adverb","Not so much; in a smaller or lower degree; as  less bright or loud; less beautiful.","'the indefinite article is somewhat less emphatic than a direct statement of one of many'"
 "Emphatically","12","adverb","With emphasis; forcibly; in a striking manner or degree; preeminently.","'he emphatically spoke to the crowd';'she emphtically disagreed with the content of the speech he gave'
+"Has","3","verb-third person singular","To possess  as something which appertains to is connected with or affects one."
+
+I am here, you are there
+I was here, you are there
+I will be there, you will be here
+I was there, you were there
+I have been there, you have been there
+
+she is here, he is there
+we are here, they are there
+she was here, he was there
+they were there, we were there
+she will be here, he will be there
+they will be here, we will be there
+she has been here, he has been there
+they have been there, we have been there
+she could be here, he would be there
+they could be there, we should be there
+she might have been here, he should have been there
+we might have been there, they might have been here
 
 
 
