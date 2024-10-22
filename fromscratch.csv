@@ -1,12 +1,8 @@
-"A","1","indefinite article","It is used before nouns of the singular number only and signifies one of any but somewhat less emphatically.","'I actioned a thing'; 'he walked a mile'; 'she opened a door'"
+"A","1","indefinite article","It is used before nouns of the singular number only and signifies one of any but somewhat less emphatically.","'I actioned a thing'; 'he walked a mile'; 'she opened a door';'a house on the street';'a dog chasing a cat'"
 "A","1","distributive article","It has a distributive force and is equivalent to 'for every' in any 'value for every other value'.","'twice a minute'; 'once a day'; 'one shilling a pound';'one day a year';'two weeks a month'"
-"An","2","indefinite article","It is used before nouns of the singular number only and signifies one or any but somewhat less emphatically.","'I actioned an idea'; 'he walked an hour'; 'she opened an arbour'"
-"An","2","distributive article","It has a distributive force and is equivalent to 'for every' in any 'value for every other value'.","'twice an hour'; 'once an eon'; 'one shilling an ounce'"
 "The","3","definite article.","A word placed before nouns to limit or individualize their meaning.","'the cat sat on the mat'; 'the cow jumped over the moon'"
 "Adjective","9","noun","A word used with a noun or substantive to express a quality of the thing named or something attributed to it or to limit or define it or to specify or describe a thing as distinct from something else. Thus in phrase 'a wise ruler', 'wise' is the adjective expressing a property of 'ruler'.","The adjective goes before the noun'; 'the adjective describes the noun'; 'an adjective can be found in an adjectival phrase'"
-"Adjectives","9","plural","Adjective","adjectives go before nouns'; 'adjectives describes nouns'; 'adjectives can be found in an adjectival phrase'"
-"Word","4","noun","The written or printed character or combination of characters expressing a conception or an idea; as the words on a page; a constituent part of a sentence; a term;","'a word is a part of speech'; 'this word has 4 letters'"
-"Words","4","plural","Word","'many words are a part of speech'; 'many word have 4 letters'"
+"Word","4","noun","The written or printed character or combination of characters expressing a conception or an idea; a constituent part of a sentence; a term;","'a word is a part of speech';'this word has 4 letters';'the words on a page'"
 "This","4","pronoun","As a demonstrative pronoun this denotes something that is present or near in place or time or something just mentioned or that is just about to be mentioned.","'this is mine'; 'this belongs to you'; 'this is not correct'"
 "This","4","adjective","As an adjective 'this' has the same demonstrative force as the pronoun but is followed by a noun","'this book'; 'this way to town'"
 "It","2","pronoun","As a substitute for any noun of the neuter gender.","'it is here';'it is used before nouns';'it is the indefinite article'"
@@ -36,13 +32,66 @@
 "Less","4","adverb","Not so much; in a smaller or lower degree; as  less bright or loud; less beautiful.","'the indefinite article is somewhat less emphatic than a direct statement of one of many'"
 "Emphatically","12","adverb","With emphasis; forcibly; in a striking manner or degree; preeminently.","'he emphatically spoke to the crowd';'she emphtically disagreed with the content of the speech he gave'
 "Has","3","verb-third person singular","To possess  as something which appertains to is connected with or affects one."
-"Distributive","12","noun","A distributive adjective or pronoun; also  a distributive numeral.","'It has a distributive force';'A distributive sprinkler spreads out the water on the crop.'"
+"Distributive","12","a.","Tending to distribute; serving to divide and assign in portions; dealing to each his proper share."
+"Force","5","noun","To put in force; to cause to be executed; to make binding; to enforce."
 "Equivalent","10","adjective","Equal in worth or value  force power effect import and the like; alike in significance and value; of the same import or meaning.","'A change is equivalent to a holiday';'six is equivalent to a half dozen'"
-"To","2","prep.","In a very general way and with innumerable varieties of application to connects transitive verbs with their remoter or indirect object and adjectives nouns and neuter or passive verbs with a following noun which limits their action. Its sphere verges upon that of for but it contains less the idea of design or appropriation; as these remarks were addressed to a large audience; let us keep this seat to ourselves; a substance sweet to the taste; an event painful to the mind; duty to God and to our parents; a dislike to spirituous liquor."
+"To","2","preposition","In a very general way and with innumerable varieties of application to connects transitive verbs with their remoter or indirect object and adjectives nouns and neuter or passive verbs with a following noun which limits their action. Its sphere verges upon that of for but it contains less the idea of design or appropriation; as these remarks were addressed to a large audience; let us keep this seat to ourselves; a substance sweet to the taste; an event painful to the mind; duty to God and to our parents; a dislike to spirituous liquor."
+"For","3","preposition","In the most general sense  indicating that in consideration of in view of or with reference to which anything is done or takes place.","'for every task there is a season';'for one direction is like another'"
+"Every","5","a. & a. pron.","All the parts which compose a whole collection or aggregate number  considered in their individuality all taken separately one by one out of an indefinite bumber."
+"In","2","prep.","With reference to space or place; as  he lives in Boston; he traveled in Italy; castles in the air."
+"Any","3","a. & pron.","One indifferently  out of an indefinite number; one indefinitely whosoever or whatsoever it may be."
+"Value","5","n.","A numerical amount","'value for every other value';'add the first value to the second value to get a third value that is the sum of the first two values'
+"Other","5","pron. & a.","Alternate; second; -- used esp. in connection with every; as  every other day that is each alternate day every second day."
+"Place","verb","put in position","'place the adjective before the noun';'place the gun on the ground';'she will place the plate on the table'
+
+
+
+https://academicguides.waldenu.edu/writingcenter/grammar/verbforms
+
+verb
+Simple present He verbs every day
+Present Progressive He is verbing right now
 
 
 
 
+The 12 main tenses:
+
+    Simple present: She writes every day.
+    Present progressive: She is writing right now.
+    Simple past: She wrote last night.
+    Past progressive: She was writing when he called.
+    Simple future: She will write tomorrow.
+    Future progressive: She will be writing when you arrive.
+    Present perfect: She has written Chapter 1.
+    Present perfect progressive: She has been writing for 2 hours.
+    Past perfect: She had written Chapter 3 before she started Chapter 4.
+    Past perfect progressive: She had been writing for 2 hours before her friends arrived.
+    Future perfect: She will have written Chapter 4 before she writes Chapter 5.
+    Future perfect progressive: She will have been writing for 2 hours by the time her friends come over.
+
+Conditionals:
+
+Zero conditional (general truths/general habits).
+
+    Example: If I have time, I write every day.
+
+First conditional (possible or likely things in the future).
+
+    Example: If I have time, I will write every day.
+
+Second conditional (impossible things in the present/unlikely in the future).
+
+    Example: If I had time, I would write every day.
+
+Third conditional (things that did not happen in the past and their imaginary results)
+
+    Example: If I had had time, I would have written every day.
+
+Subjunctive: This form is sometimes used in that-clauses that are the object of certain verbs or follow certain adjectives. The form of the subjective is the simple form of the verb. It is the same for all persons and number.
+
+    Example: I recommend that he study every day.
+    Example: It is important that everyone set a writing schedule.
 
 
 
