@@ -1,28 +1,184 @@
+Articles:
+
 "A","1","indefinite article","'one single instance of any instances of one;","'I actioned a thing'; 'he walked a mile'; 'she opened a door';'a house on the street';'a dog chasing a cat'"
 "A","1","distributive article","'for every';'for each';'for any'","'twice a minute'; 'once a day'; 'one shilling a pound';'one day a year';'two weeks a month'"
 "The","3","definite article.","'one specific instance of'","'the cat sat on the mat'; 'the cow jumped over the moon'"
-"Adjective","9","noun",","'term used to describe a noun'","The adjective goes before the noun'; 'the adjective describes the noun'; 'an adjective can be found in an adjectival phrase'"
+
+Conjunctions:
+
+"And","3","conjunction","A particle which expresses the relation of addition. It is used to conjoin a word with a word.","'as well as';'along with'","'this and that';'bangers and mash'"
+"And","3","conjunction","A particle which expresses the relation of connection. It is used to conjoin a clause with a clause or a sentence with a sentence.","while it also","'It is used before nouns of the singular number only and signifies one or any but somewhat less emphatically'"
+"But","3","conjunction","Except; besides; save; and negatively.","and also","'singular number only and signifies one or any but somewhat less emphatically';'it could be caused by anything but probably only one thing';'there are two but maybe three dogs in the yard"
+"But","3","adverb","reduced, negated, or trivialised in existence","'so reduced as to be';'so negated as to be';'so trivialised as to be'","'she is but a mere shadow of her former self'"
+"Or","2","conjunction","A particle that marks an alternative; It corresponds to either; It often connects a series of words or propositions presenting a choice of either","'alternatively';'optionally'","'you may read or you may write';'he may study law or medicine or divinity or he may enter into trade';'You may ride either to London or to Windsor'
+
+Nouns:
+
 "Word","4","noun","'contiguous and discrete sequence of charactes having a meaning and purpose within language'","'a word is a part of speech';'this word has 4 letters';'the words on a page'"
+"Noun","4","noun","A word used as the designation or appellation of a creature or thing existing in fact or in thought; a substantive.","word identifying a thing","'the subject of a sentence can be a noun'; 'the object of a sentence can be a noun'; 'a noun is a word in a sentence designating a thing'"
+"Adjective","9","noun",","'term used to describe a noun'","The adjective goes before the noun'; 'the adjective describes the noun'; 'an adjective can be found in an adjectival phrase'"
+"Verb","4","noun","term used to represent an action","The verb is a part of speech that represents an action';'A sentence needs to contain a verb'"
+"Adverb"
+"Preposition"
+"Conjunction"
+"Pronoun"
+"Article"
+"Sentence"
+"Determiner"
+
+Adjectives:
+"Possessive"
+"Distributive","12","adjective","Tending to distribute; serving to divide and assign in portions; dealing to each his proper share.","","'It has a distributive force';'It has a distributive effect'"
+"Indefinite"
+"Interrogative"
+"Only","4","adjective","So and no otherwise; no other than","'exclusively'; 'solely'; 'wholly';'specifically'","'It is used before nouns of the singular number only and signifies one or any but somewhat less emphatically';'one and only one'"
+
+Pronouns:
+
 "This","4","pronoun","'a close arbitrary particular item'","'this is mine'; 'this belongs to you'; 'this is not correct'"
-"This","4","demonstative determiner","'a close arbitrary particular instance of a","'this book'; 'this way to town'"
 "That","4","pronoun","'a distant arbitrary particular item'","'that is mine'; 'that belongs to you'; 'that is not correct'"
-"That","4","demonstative determiner","'a distant arbitrary particular instance of a","'that book'; 'that way to town'"
+"These","5","pronoun","'a close arbitrary group of particular items'","'these are mine'; 'these belong to you'; 'these are not correct'"
+"Those","5","pronoun","'a distant arbitrary group of particular items'","'those are mine'; 'those belong to you'; 'those are not correct'"
 "It","2","pronoun","As a substitute for any noun of the neuter gender.","a previously alluded to arbitrary item","'it is here';'it is used before nouns';'it is the indefinite article'"
-"Is","2","verb","The third person singular of the substantive verb","exists in the location, condition or state of","'he is here'; 'she is a woman'"
-"Be","2","future","is","exist in the location, condition or state of","'she will be here'; 'you can be a good person'"
+
+Demonstrative Determiners:
+
+"This","4","demonstative determiner","'a close arbitrary particular instance of a","'this book'; 'this way to town'"
+"That","4","demonstative determiner","'a distant arbitrary particular instance of a","'that book'; 'that way to town'"
+"These","5","demonstative determiner","'a close arbitrary group of particular instances of","'these books'; 'these ways to town'"
+"Those","5","demonstative determiner","'a distant arbitrary group of particular instances of","'those books'; 'those ways to town'"
+
+Possessive Determiners:
+
+"My","2","possessive determiner","Referring to the entity that is the source of the communication","a distinct instance belonging to, related to or associated with me of a","'This is my home';'I am going to my school'" 
+"Your" ,"4","possessive determiner","Referring to a particular arbitrary group that includes the intended rescipient of the communication","a distinct instance belonging to, related to or associated with you of a","'This is your home';'I am going to your school"
+"His","3","possessive determiner","Referring to a particular arbitrary male","a distinct instance belonging to, related to or associated with an arbitrary previously alluded to male of a","'This is his home';'I am going to his school'"
+"Her","3","possessive determiner","Referring to a particular arbitrary female","a distinct instance belonging to, related to or associated with an arbitrary previously alluded to female of a","'This is her home';'I am going to her school'"
+"Its","3","possessive determiner","Referring to a particular arbitrary entity","a distinct instance belonging to, related to or associated with an arbitrary previously alluded to entity of a","'This is its home';'I am going to its school'"
+"Our","3","possessive determiner","Referring to a particular arbitrary group including the entity that is the source of the communication","a distinct instance belonging to, related to or associated with an arbitrary group including the source of this communication of a","'This is our home';'I am going to our school'"
+"Their","5","possessive determiner","Referring to a particular arbitrary group not including the entity that is the source of the communication and not including the a particular arbitrary group that includes the intended rescipient of the communication","'a distinct instance belonging to, related to or associated with an arbitrary group not including the source of this communication and not including the intended rescipient of this communication of a'","'This is their home';'I am going to their school'"
+"Whose","5","possessive determiner","Referring to an unknown entity or group in the form of a query","a distinct instance belonging to, related to or associated with whom of a","'This is whose home?';'I am going to whose school?'"
+
+Interrogative Determiners:
+"What","4","interrogative determiner","Referring to an unknown thing in the form of a query of a description of the thing","","'what thing is this';'what things are those'"
+"Which","5","interrogative determiner","Referring to an unknown thing of a known collection of things in the form of a query of the description of the thing","","'which thing from this known group of things is the thing'"
+
+Interrogative Pronouns:
+
+"What","4","interrogative pronoun","Referring to an unknown thing in the form of a query of the thing","","'what is this';'what are these';'what are those';'what is that'"
+"Which","5","interrogative pronoun","Referring to an unknown thing of a known collection of things in the form of a query of the thing","","'which is the thing from this known group of things is the thing'"
+
+Interrogative Possessive Determiners:
+
+"Whose","5","interrogative possessive determiner","Referring to an unknown entity or group in the form of a query of the description of the thing","a distinct instance belonging to, related to or associated with whom of a","'whose home is this?';'whose school am I going to?'"
+
+Interrogative Possessive Pronoun:
+
+"Whose","5","interrogative possessive pronoun","Referring to an unknown entity or group in the form of a query","a distinct instance belonging to, related to or associated with what person","'whose is this home?';'whose is this school I am going to?'"
+
+Verbs:
+
+
+"Is","2","verb:Present Simple In","currently exists in the location, condition or state of","'he is here'; 'he is afraid'"
+"Is","2","verb:Present Simple As","currently exists as","'she is a woman';'he is a worker'"
+"Being","5","verb:Present Continuous Progressive In","currently existing in the location, condition or state of","'he is being here'"
+"Being","5","verb:Present Continuous Progressive As","currently existing as","'she is being a woman'"
+"Been","4","verb:Present Perfect","existed and continues to exist in the location, condition or state of","'he has been here'"
+"Been","4","verb:Present Perfect","existed and continues to exist as","'he has been here';'she has been a woman'"
+"Being","5","Present Perfect Continuous In","existing in the state, location of condition of","'she has been being very patient'"
+"Being","5","Present Perfect Continuous As","existing as","'she has been being a very patient person'"
+"Was","3","Past Simple In","existed in the state, location of condition of","'She was happy yesterday'
+"Was","3","Past Simple As","existed as","'She was a happy person yesterday'"
+"Being","5","Past Continuous Progressive In","existing in a state, location or condition of","She was being kind to everyone."
+"Being","5","Past Continuous Progressive As","existing as","She was being a kind person to everyone."
+"Been","4","Past Perfect In","existed before in a state, location or condition of being a","She had been teaching before she moved here"
+"Been","4","Past Perfect As","existed before as","She had been a teacher before she moved here"
+
+"Be","2","Verb:Future Simple In","exist in the state, condition of location of","'she will be here','he will be male'"
+"Be","2","Verb:Future Simple As","exist as","'you can be a good person';'he will be a man'"
+
+1. Present Simple
+
+    "She is happy."
+    (Used to describe a current, general fact or state.)
+
+2. Present Continuous (Progressive)
+
+    "She is being helpful."
+    (Used to describe an ongoing action happening now.)
+
+3. Present Perfect
+
+    "She has been a teacher for five years."
+    (Used to describe a state that began in the past and continues to the present.)
+
+4. Present Perfect Continuous
+
+    "She has been being very patient."
+    (Rarely used but indicates an action that started in the past and continues into the present.)
+
+5. Past Simple
+
+    "She was happy yesterday."
+    (Describes a completed action or state in the past.)
+
+6. Past Continuous (Progressive)
+
+    "She was being kind to everyone."
+    (Describes an ongoing action in the past.)
+	
+7. Past Perfect
+
+    "She had been a teacher before she moved here."
+    (Describes a state completed before another past event.)
+
+8. Past Perfect Continuous
+
+    "She had been being overly cautious."
+    (Rarely used, but describes an action that was ongoing before another past action.)
+
+9. Future Simple
+
+    "She will be happy tomorrow."
+    (Describes a future state or action.)
+
+10. Future Continuous (Progressive)
+
+    "She will be being helpful tomorrow."
+    (Describes a future ongoing action.)
+
+11. Future Perfect
+
+    "She will have been a teacher for ten years by next year."
+    (Describes a state that will be completed by a certain point in the future.)
+
+12. Future Perfect Continuous
+
+    "She will have been being patient by the time they arrive."
+    (Very rare but used to describe an action that will be ongoing until a point in the future.)
+Transitive Verbs:
+
+"Discussed"
+"Addressed"
+"Borrowed"
+"Bring"
+"Gave"
 "Uses","4","Verb","The act of employing anything  or of applying it to one's service; the state of being so employed or applied; application; employment; conversion to some purpose"'"manipulates or transforms things with","'he uses a pen in writing'; 'she uses machines'"
 "Use","3","future","uses","manipulate or transform things with","'to use a plow'; 'to use a chair'; 'he will use walking'; 'she can use flour for food'; 'you should use water for irrigation'"
 "Using","3","present","uses"'"manipulating or transforming things with","'will be using a plow'; 'to be using a chair'; 'can be using time'; 'should be using flour for food'; 'might be using water for irrigation'"
 "Used","4","verb-past","uses","manipulated or transformed things with","'used a plow'; 'used a chair'; 'used time'; 'used flour for food'; 'used water for irrigation'"
+
+
+
+Preposition:
+
 "Before","6","preposition","In front of; preceding in space; ahead of","positioned in front of","'to stand before the fire'; 'before the house';'it is used before nouns of the singular number'"
-"Noun","4","noun","A word used as the designation or appellation of a creature or thing existing in fact or in thought; a substantive.","word identifying a thing","'the subject of a sentence can be a noun'; 'the object of a sentence can be a noun'; 'a noun is a word in a sentence designating a thing'"
+
+
 "Nouns","4","plural:Noun","words used as the designation or appellation of creatures or things existing in fact or in thought; substantives.","words identifying things","'the subject and object of a sentence can be nouns'; 'nouns are words in a sentence designating things'"
 "Of","2","prep.","In a general sense from or out from","proceeding from; belonging to; relating to; concerning;","'signifies one of any but somewhat less emphatically'"
 "Singular","8","adjective","Existing by itself; single; individual.","quantity of not more or less than one","'used before nouns of the singular number','a singular definition is not always possible for many words'"
 "Number","6","noun","That which admits of being counted or reckoned; a unit  or an aggregate of units; a numerable aggregate or collection of individuals; an assemblage made up of distinct things expressible by figures.","'quantity'","'used before nouns of the singular number';'there are a number of words that have multiple definitions'"
-"Only","4","adjective","So and no otherwise; no other than","'exclusively'; 'solely'; 'wholly';'specifically'","'It is used before nouns of the singular number only and signifies one or any but somewhat less emphatically';'one and only one'"
-"And","3","conjunction","A particle which expresses the relation of addition. It is used to conjoin a word with a word.","'as well as';'along with'","'this and that';'bangers and mash'"
-"And","3","conjunction","A particle which expresses the relation of connection. It is used to conjoin a clause with a clause or a sentence with a sentence.","while it also","'It is used before nouns of the singular number only and signifies one or any but somewhat less emphatically'"
 "Signify","7","verb","To show by a sign; to communicate by any conventional token  as words gestures signals or the like; to announce; to make known; to declare; to express","'demonstrate';'indicate';'represent';'be demonstrative of';'be indicative of';'be representative of'","'A rod will signify your authority';'a passport will signify your permission to travel'
 "Signifying","7","verb-present-participle","To show by a sign; to communicate by any conventional token  as words gestures signals or the like; to announce; to make known; to declare; to express"'"'demonstrating';'indicating';'representing';'a demonstration of';'a indication of';'a representation of'","'this rod is signifying your authority';'this passport is signifying your permission to travel'
 "Signifyies","7","verb-present","To show by a sign; to communicate by any conventional token  as words gestures signals or the like; to announce; to make known; to declare; to express","'demonstrates';'indicates';'represents';'is demonstrative of';'is indicative of';'is representative of'","'this rod signifies your authority';'this passport signifyies your permission to travel'
@@ -30,16 +186,13 @@
 "One","3","noun","A single person or thing.","single element of a previously alluded to collection","'this one is good';'that one is bad'" 
 "One","3","ordinal number","Specifies a quantity","three take to","'there is one tree here';'that is one house'; 'one or two will work'" 
 "One","3","adjective","specifies a singular quantity of a thing","a singular quantity of"," 'signifies one or any'"
-"Or","2","conjunction","A particle that marks an alternative; It corresponds to either; It often connects a series of words or propositions presenting a choice of either","'alternatively';'optionally'","'you may read or you may write';'he may study law or medicine or divinity or he may enter into trade';'You may ride either to London or to Windsor'
 "Any","3","indefinite determiner","Some of whatever kind quantity or number;","'an arbitrary quantity greater than zero of';'one or more instances of'","'are there any witnesses present?'; 'are there any other houses like it?';'are you in any trouble';'are there any people here'"
 "Any","3","pronoun","Some of whatever kind quantity or number;","'an arbitrary quantity greater than zero'","'it can be any'; 'there cannot be any'"
-"But","3","conjunction","Except; besides; save; and negatively.","and also","'singular number only and signifies one or any but somewhat less emphatically';'it could be caused by anything but probably only one thing';'there are two but maybe three dogs in the yard"
-"But","3","adverb","reduced, negated, or trivialised in existence","'so reduced as to be';'so negated as to be';'so trivialised as to be'","'she is but a mere shadow of her former self'"
 "Somewhat","8","adverb","In some degree or measure; a little.","'to a certain degree'","'he is somewhat tall';'the indefinite article is somewhat less emphatic than a direct statement of one of many'"
 "Less","4","adverb","Not so much; in a smaller or lower degree;","'of a reduced value of';'of a reduced magnitude of';'or a reduced quantity of'","'the indefinite article is somewhat less emphatic than a direct statement of one of many';'less bright or loud'; 'less beautiful'"
+"More","4",
 "Emphatically","12","adverb","'with forcefulness';'with a striking manner';'with intensity'","'he emphatically spoke to the crowd';'she emphtically disagreed with the content of the speech he gave'
 "Has","3","verb-third person singular","To possess as something which appertains to is connected with or affects one.","'possesses';'owns';'is in possession of'","She has an apple';'He has a bike';'That has an aroma'"
-"Distributive","12","adjective","Tending to distribute; serving to divide and assign in portions; dealing to each his proper share.","","'It has a distributive force';'It has a distributive effect'"
 "Force","5","noun","To put in force; to cause to be executed; to make binding; to enforce.","'manipulation';'compulsion';'effect'","It has a distributive force"
 "Equivalent","10","adjective","Equal in worth or value  force power effect import and the like; alike in significance and value; of the same import or meaning.","'the same in comparison'","'A change is equivalent to a holiday';'six is equivalent to a half dozen'"
 "To","2","preposition","In a very general way and with innumerable varieties of application to connects transitive verbs with their remoter or indirect object and adjectives nouns and neuter or passive verbs with a following noun which limits their action. Its sphere verges upon that of for but it contains less the idea of design or appropriation;","'with the purpose of being for'","these remarks were addressed to a large audience; let us keep this seat to ourselves; a substance sweet to the taste; an event painful to the mind; duty to God and to our parents; a dislike to spirituous liquor."
@@ -57,23 +210,22 @@
 "Place","verb","put in position","'put in position';'put into position'","'place the adjective before the noun';'place the gun on the ground';'she will place the plate on the table'
 "Single","6","adjective","A descriptive term the limits the item being described to a quantity of one.","quantity of one of an","There is a single item here."
 "Instance","8","transitive verb","To mention as a case or example; to refer to; to cite; as  to instance a fact.","representative example","this is an instance of a thing"
-"My","2","possessive determiner","Referring to the entity that is the source of the communication","a distinct instance belonging to, related to or associated with me of a","'This is my home';'I am going to my school'" 
-"Your" ,"4","possessive determiner","Referring to a particular arbitrary group that includes the intended rescipient of the communication","a distinct instance belonging to, related to or associated with you of a","'This is your home';'I am going to your school"
-"His","3","possessive determiner","Referring to a particular arbitrary male","a distinct instance belonging to, related to or associated with an arbitrary previously alluded to male of a","'This is his home';'I am going to his school'"
-"Her","3","possessive determiner","Referring to a particular arbitrary female","a distinct instance belonging to, related to or associated with an arbitrary previously alluded to female of a","'This is her home';'I am going to her school'"
-"Its","3","possessive determiner","Referring to a particular arbitrary entity","a distinct instance belonging to, related to or associated with an arbitrary previously alluded to entity of a","'This is its home';'I am going to its school'"
-"Our","3","possessive determiner","Referring to a particular arbitrary group including the entity that is the source of the communication","a distinct instance belonging to, related to or associated with an arbitrary group including the source of this communication of a","'This is our home';'I am going to our school'"
-"Their","5","possessive determiner","Referring to a particular arbitrary group not including the entity that is the source of the communication and not including the a particular arbitrary group that includes the intended rescipient of the communication","'a distinct instance belonging to, related to or associated with an arbitrary group not including the source of this communication and not including the intended rescipient of this communication of a'","'This is their home';'I am going to their school'"
-"Whose","5","possessive determiner","Referring to an unknown entity or group in the form of a query","a distinct instance belonging to, related to or associated with whom of a","'This is whose home?';'I am going to whose school?'"
-"Whose","5","interrogative possessive determiner","Referring to an unknown entity or group in the form of a query of the description of the thing","a distinct instance belonging to, related to or associated with whom of a","'whose home is this?';'whose school am I going to?'"
-"Whose","5","interrogative possessive pronoun","Referring to an unknown entity or group in the form of a query","a distinct instance belonging to, related to or associated with what person","'whose is this home?';'whose is this school I am going to?'"
-"What","4","interrogative determiner",Referring to an unknown thing in the form of a query of a description of the thing","","'what thing is this';'what things are those'"
-"What","4","interrogative pronoun","Referring to an unknown thing in the form of a query of the thing","","'what is this';'what are these';'what are those';'what is that'"
-"Which","5","interrogative determiner","Referring to an unknown thing of a known collection of things in the form of a query of the description of the thing","","'which thing from this known group of things is the thing'"
-"Which","5","interrogative pronoun","Referring to an unknown thing of a known collection of things in the form of a query of the thing","","'which is the thing from this known group of things is the thing'"
-"Thing"
+"Why","3",
+"When","4",
+"How","3",
+"Thing","5",
 
-
+"Should","Auxiliary Verb","","'He should do this';She should do that';We should not do this';They should not do that'"
+"Would","Auxiliary Verb","","'He would do this';She would do that';We would not do this';They would not do that'"
+"Could","Auxiliary Verb","","'He could do this';She could do that';We could not do this';They could not do that'"
+"Might","Auxiliary Verb","","'He might do this';She might do that';We might not do this';They might not do that'"
+"Must","Auxiliary Verb","","'He must do this';She must do that';We must not do this';They must not do that'"
+"May","Auxiliary Verb","","'He may do this';She may do that';We may not do this';They may not do that'"
+"Can","Auxiliary Verb","","'He can do this';She can do that';We can not do this';They can not do that'"
+"Will","Auxiliary Verb","","'He will do this';She will do that';We will not do this';They will not do that'"
+"Just","Auxiliary Verb","","'He just does this';She just does that';We just do not do this';They just do not do that'"
+"Shall","Auxiliary Verb","","'He shall do this';She shall do that';We shall not do this';They shall not do that'"
+"Did","Auxiliary Verb","","'He did do this';She did do that';We did not do this';They did not do that'"
 
 who,whose,whom
 what,whats,whatm
