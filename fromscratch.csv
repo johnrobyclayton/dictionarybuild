@@ -78,69 +78,76 @@ Interrogative Possessive Pronoun:
 
 Verbs:
 
-
+1. Present Simple
+Used to describe a current, general fact or state.)
 "Is","2","verb:Present Simple In","currently exists in the location, condition or state of","'he is here'; 'he is afraid'"
 "Is","2","verb:Present Simple As","currently exists as","'she is a woman';'he is a worker'"
-"Being","5","verb:Present Continuous Progressive In","currently existing in the location, condition or state of","'he is being here'"
-"Being","5","verb:Present Continuous Progressive As","currently existing as","'she is being a woman'"
-"Been","4","verb:Present Perfect","existed and continues to exist in the location, condition or state of","'he has been here'"
-"Been","4","verb:Present Perfect","existed and continues to exist as","'he has been here';'she has been a woman'"
-"Being","5","Present Perfect Continuous In","existing in the state, location of condition of","'she has been being very patient'"
-"Being","5","Present Perfect Continuous As","existing as","'she has been being a very patient person'"
-"Was","3","Past Simple In","existed in the state, location of condition of","'She was happy yesterday'
-"Was","3","Past Simple As","existed as","'She was a happy person yesterday'"
-"Being","5","Past Continuous Progressive In","existing in a state, location or condition of","She was being kind to everyone."
-"Being","5","Past Continuous Progressive As","existing as","She was being a kind person to everyone."
-"Been","4","Past Perfect In","existed before in a state, location or condition of being a","She had been teaching before she moved here"
-"Been","4","Past Perfect As","existed before as","She had been a teacher before she moved here"
-
-"Be","2","Verb:Future Simple In","exist in the state, condition of location of","'she will be here','he will be male'"
-"Be","2","Verb:Future Simple As","exist as","'you can be a good person';'he will be a man'"
-
-1. Present Simple
-
-    "She is happy."
-    (Used to describe a current, general fact or state.)
 
 2. Present Continuous (Progressive)
-
-    "She is being helpful."
     (Used to describe an ongoing action happening now.)
+"Being","5","verb:Present Continuous Progressive In","currently existing in the location, condition or state of","'he is being here'"
+"Being","5","verb:Present Continuous Progressive As","currently existing as","'she is being a woman'"
 
 3. Present Perfect
-
-    "She has been a teacher for five years."
     (Used to describe a state that began in the past and continues to the present.)
+"Been","4","verb:Present Perfect","existed and continues to exist in the location, condition or state of","'he has been here'"
+"Been","4","verb:Present Perfect","existed and continues to exist as","'he has been here';'she has been a woman'"
 
 4. Present Perfect Continuous
-
-    "She has been being very patient."
     (Rarely used but indicates an action that started in the past and continues into the present.)
+"Being","5","Present Perfect Continuous In","existing in the past and currently existing in the state, location of condition of","'she has been being very patient'"
+"Being","5","Present Perfect Continuous As","existing in the past and is currently existing as","'she has been being a very patient person'"
 
 5. Past Simple
-
-    "She was happy yesterday."
     (Describes a completed action or state in the past.)
+"Was","3","Past Simple In","existed in the state, location of condition of","'She was happy yesterday'
+"Was","3","Past Simple As","existed as","'She was a happy person yesterday'"
 
 6. Past Continuous (Progressive)
-
-    "She was being kind to everyone."
     (Describes an ongoing action in the past.)
-	
-7. Past Perfect
+"Being","5","Past Continuous Progressive In","existing in the past and continued existing in a state, location or condition of","She was being kind to everyone."
+"Being","5","Past Continuous Progressive As","existing in the past and continued existing as","She was being a kind person to everyone."
 
-    "She had been a teacher before she moved here."
+7. Past Perfect
     (Describes a state completed before another past event.)
+"Been","4","Past Perfect In","existed before in a state, location or condition of","She had been teaching before she moved here"
+"Been","4","Past Perfect As","existed before as","She had been a teacher before she moved here"
 
 8. Past Perfect Continuous
-
-    "She had been being overly cautious."
     (Rarely used, but describes an action that was ongoing before another past action.)
+"Been","4","Past Perfect Continuous In","","She had been being overly cautious."
+"Been","4","Past Perfect Continuous As","existed continuously as","She had been a person being overly cautious."
 
 9. Future Simple
-
-    "She will be happy tomorrow."
     (Describes a future state or action.)
+"Be","2","Verb:Future Simple In","exist in the state, condition of location of","'she will be here tomorrow','he will be male tomorrow'"
+"Be","2","Verb:Future Simple As","exist as","'you can be a good person tomorrow';'he will be a man tomorrow'"
+
+10. Future Continuous (Progressive)
+
+    "She will be being helpful tomorrow."
+    (Describes a future ongoing action.)
+"Being","5","Verb:Future Continuous Progressive In","","She will be being helpful tomorrow"
+"Being","5","Verb:Future Continuous Progressive In","","She will be being a helpful person tomorrow"
+
+"Been","5","Verb:Future Continuous Perfect In","existed in and are continuing to exist in the state, condition of location of","'she will have been teaching for one year tomorrow','he will have been male for one year tomorrow'"
+"Been","5","Verb:Future Continuous Perfect As","existed as and are contining to exist as","'you will have been a good person for one year tomorrow';'he will have been being a man for one year tomorrow'"
+
+11. Future Perfect
+
+    "She will have been a teacher for ten years by next year."
+    (Describes a state that will be completed by a certain point in the future.)
+
+12. Future Perfect Continuous
+
+    "She will have been being patient by the time they arrive."
+    (Very rare but used to describe an action that will be ongoing until a point in the future.)
+
+
+
+
+	
+
 
 10. Future Continuous (Progressive)
 
@@ -156,6 +163,9 @@ Verbs:
 
     "She will have been being patient by the time they arrive."
     (Very rare but used to describe an action that will be ongoing until a point in the future.)
+
+
+
 Transitive Verbs:
 
 "Discussed"
