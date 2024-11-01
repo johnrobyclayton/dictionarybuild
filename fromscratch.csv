@@ -80,18 +80,38 @@ Verbs:
 
 1. Present Simple
 Used to describe a current, general fact or state.)
-"Is","2","verb:Present Simple In","currently exists in the location, condition or state of","'he is here'; 'he is afraid'"
-"Is","2","verb:Present Simple As","currently exists as","'she is a woman';'he is a worker'"
+"Am","2","verb:Present Simple First Person In","currently exists in the location, condition or state of","'I am here'; 'I am afraid'"
+"Am","2","verb:Present Simple First Person As","currently exists as","'I am a woman';'I am a worker'"
+"Are","2","verb:Present Simple Second Person In","currently exists in the location, condition or state of","'You are here'; 'You are afraid'"
+"Are","2","verb:Present Simple Second Person As","currently exists as","'You are a woman';'You are a worker'"
+"Is","2","verb:Present Simple Third Person In","currently exists in the location, condition or state of","'he is here'; 'he is afraid'"
+"Is","2","verb:Present Simple Third Person As","currently exists as","'she is a woman';'he is a worker'"
+"Are","2","verb:Present Simple First Person Plural In","currently exists in the location, condition or state of","'We are here'; 'We are afraid'"
+"Are","2","verb:Present Simple First Person Plural As","currently exists as","'We are a number of women';'We are a number of workers'"
+"Are","2","verb:Present Simple Second Person Plural In","currently exists in the location, condition or state of","'You are workers'; 'You are men'"
+"Are","2","verb:Present Simple Second Person Plural As","currently exists as","'You are a group of women';'You are a group of workers'"
+"Are","2","verb:Present Simple Third Person Plural In","currently exists in the location, condition or state of","'They are here'; 'They are afraid'"
+"Are","2","verb:Present Simple Third Person Plural As","currently exists as","'they are a nuber of women';'they are a number of workers'"
 
 2. Present Continuous (Progressive)
     (Used to describe an ongoing action happening now.)
-"Being","5","verb:Present Continuous Progressive In","currently existing in the location, condition or state of","'he is being here'"
-"Being","5","verb:Present Continuous Progressive As","currently existing as","'she is being a woman'"
+"Am""Being","5","verb:Present Continuous Progressive First Person In","'currently exists in the location, condition or state of';'currently existing in the location, condition or state of'","'I am being here'"
+"Am""Being","5","verb:Present Continuous Progressive First Person As","currently existing as","'I am being a woman'"
+"Are""Being","5","verb:Present Continuous Progressive Second Person In","currently existing in the location, condition or state of","'You are being here'"
+"Are""Being","5","verb:Present Continuous Progressive Second Person As","currently existing as","'You are being a woman'"
+"Is""Being","5","verb:Present Continuous Progressive Third Person In","currently existing in the location, condition or state of","'he is being here'"
+"Is""Being","5","verb:Present Continuous Progressive Third Person As","currently existing as","'she is being a woman'"
+"Are""Being","5","verb:Present Continuous Progressive First Person Plural In","currently existing in the location, condition or state of","'We are being women'"
+"Are""Being","5","verb:Present Continuous Progressive First Person As","currently existing as","'We are being a group of women'"
+"Are""Being","5","verb:Present Continuous Progressive Second Person In","currently existing in the location, condition or state of","'You are being women'"
+"Are""Being","5","verb:Present Continuous Progressive Second Person As","currently existing as","'You are being a group of women'"
+"Are""Being","5","verb:Present Continuous Progressive Third Person In","currently existing in the location, condition or state of","'they are being here'"
+"Are""Being","5","verb:Present Continuous Progressive Third Person As","currently existing as","'they are being a group of  women'"
 
 3. Present Perfect
     (Used to describe a state that began in the past and continues to the present.)
-"Been","4","verb:Present Perfect","existed and continues to exist in the location, condition or state of","'he has been here'"
-"Been","4","verb:Present Perfect","existed and continues to exist as","'he has been here';'she has been a woman'"
+"Has Been","4","verb:Present Perfect","existed and continues to exist in the location, condition or state of","'he has been here'"
+"Has Been","4","verb:Present Perfect","existed and continues to exist as","'he has been here';'she has been a woman'"
 
 4. Present Perfect Continuous
     (Rarely used but indicates an action that started in the past and continues into the present.)
