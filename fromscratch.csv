@@ -104,213 +104,265 @@ Existance
 Existing in the state of performing an action
 Existing as a member of a group performing an action
 
+Modal Auxiliary Verbs
+Shall
+Should
+Can
+Could
+Will
+Would
+May
+Might
+Must
+Ought To
+I am 
+I shall be
+I should be
+I can be
+I could be
+I will be
+I would be
+I may be
+I might be
+I must be
+I ought to be
+
+I aim to be
+I aimed to be
+I try to be
+I tried to be
+I attempt to be
+I attempted to be
+
+I am not
+I shall not be
+I should not be
+I can not be
+I could not be
+I will not be
+I would not be
+I may not be
+I might not be
+I must not be
+I ought not to be
+
+I aim not to be
+I aimed not to be
+I try not to be
+I tried not to be
+I attempt not to be
+I attempted not to be
+
 Present Simple
 First Person
 Existing in
-
 "I Am","2","verb:Present Simple First Person In","currently exists in the location, condition or state of","'I am here'; 'I am afraid'"
-
 Existing as
-
 "I Am","2","verb:Present Simple First Person As","currently exists as","'I am a woman';'I am a worker'"
-
 Second Person
 Existing in
-
 "You Are","2","verb:Present Simple Second Person In","currently exists in the location, condition or state of","'You are here'; 'You are afraid'"
-
 Existing as
-
 "You Are","2","verb:Present Simple Second Person As","currently exists as","'You are a woman';'You are a worker'"
-
 Third Person
 Existing in
-
 "He/She/It Is","2","verb:Present Simple Third Person In","currently exists in the location, condition or state of","'he is here'; 'he is afraid'"
-
 Existing as
-
 "He/She/It Is","2","verb:Present Simple Third Person As","currently exists as","'she is a woman';'he is a worker'"
-
 First Person Plural
 Existing in
-
 "We Are","2","verb:Present Simple First Person Plural In","currently exists in the location, condition or state of","'We are here'; 'We are afraid'"
-
 Existing as
-
 "We Are","2","verb:Present Simple First Person Plural As","currently exists as","'We are a number of women';'We are a number of workers'"
-
 Second Person Plural
 Existing in
-
 "You Are","2","verb:Present Simple Second Person Plural In","currently exists in the location, condition or state of","'You are workers'; 'You are men'"
-
 Existing as
-
 "You Are","2","verb:Present Simple Second Person Plural As","currently exists as","'You are a group of women';'You are a group of workers'"
-
 Third Person Plural
 Existing in
-
 "They Are","2","verb:Present Simple Third Person Plural In","currently exists in the location, condition or state of","'They are here'; 'They are afraid'"
-
 Existing as
-
 "They Are","2","verb:Present Simple Third Person Plural As","currently exists as","'they are a nuber of women';'they are a number of workers'"
 
 Present Continuous Progressive
 First Person
 Existing in
-
 "I Am Being","5","verb:Present Continuous Progressive First Person In","'currently exists in the location, condition or state of';'currently existing in the location, condition or state of'","'I am being here'"
-
 Existing as
-
 "I Am Being","5","verb:Present Continuous Progressive First Person As","currently existing as","'I am being a woman'"
-
 Second Person
 Existing in
-
 "You Are Being","5","verb:Present Continuous Progressive Second Person In","currently existing in the location, condition or state of","'You are being here'"
-
 Existing as
-
 "You Are Being","5","verb:Present Continuous Progressive Second Person As","currently existing as","'You are being a woman'"
-
 Third Person
 Existing in
-
 "He/She/It Is Being","5","verb:Present Continuous Progressive Third Person In","currently existing in the location, condition or state of","'he is being here'"
-
 Existing as
-
 "He/She/It Is Being","5","verb:Present Continuous Progressive Third Person As","currently existing as","'she is being a woman'"
-
 First Person Plural
 Existing in
-
 "We Are Being","5","verb:Present Continuous Progressive First Person Plural In","currently existing in the location, condition or state of","'We are being women'"
-
 Existing as
-
 "We Are Being","5","verb:Present Continuous Progressive First Person Plural As","currently existing as","'We are being a group of women'"
-
 Second Person Plural
 Existing in
-
 "You Are Being","5","verb:Present Continuous Progressive Second Person Plural In","currently existing in the location, condition or state of","'You are being women'"
-
 Existing as
-
 "You Are Being","5","verb:Present Continuous Progressive Second Person Plural As","currently existing as","'You are being a group of women'"
-
 Third Person Plural
 Existing in
-
 "They Are Being","5","verb:Present Continuous Progressive Third Person Plural In","currently existing in the location, condition or state of","'they are being here'"
-
 Existing as
-
 "They Are Being","5","verb:Present Continuous Progressive Third Person Plural As","currently existing as","'they are being a group of  women'"
-
 
 Present Perfect
 First Person
 Existing in    
-
-"I Have Been","4","verb:Present Perfect","existed and continues to exist in the location, condition or state of","'I have been here'"
-
+"I Have Been","4","verb:Present Perfect First Person In","existed and continues to exist in the location, condition or state of","'I have been here'"
 Existing as
-
-"I Have Been","4","verb:Present Perfect","existed and continues to exist as","'he has been here';'I have been a woman'"
-
+"I Have Been","4","verb:Present Perfect Fist Person As","existed and continues to exist as","'he has been here';'I have been a woman'"
 Second Person
 Existing in    
-
-"You Have Been","4","verb:Present Perfect","existed and continues to exist in the location, condition or state of","'you have been here'"
-
+"You Have Been","4","verb:Present Perfect Second Person In","existed and continues to exist in the location, condition or state of","'you have been here'"
 Existing as
-
-"You Have Been","4","verb:Present Perfect","existed and continues to exist as","'he has been here';'you have been a woman'"
-
+"You Have Been","4","verb:Present Perfect Second Person As","existed and continues to exist as","'he has been here';'you have been a woman'"
 Third Person
 Existing in    
-
-"He/She/It Has Been","4","verb:Present Perfect","existed and continues to exist in the location, condition or state of","'he has been here'"
-
+"He/She/It Has Been","4","verb:Present Perfect Third Person In","existed and continues to exist in the location, condition or state of","'he has been here'"
 Existing as
-
-"He/She/It Has Been","4","verb:Present Perfect","existed and continues to exist as","'he has been here';'she has been a woman'"
-
+"He/She/It Has Been","4","verb:Present Perfect Third Person As","existed and continues to exist as","'he has been here';'she has been a woman'"
 First Person Plural
 Existing in    
-
-"We Have Been","4","verb:Present Perfect","existed and continues to exist in the location, condition or state of","'We have been here'"
-
+"We Have Been","4","verb:Present Perfect First PErson Plural In","existed and continues to exist in the location, condition or state of","'We have been here'"
 Existing as
-
-"We Have Been","4","verb:Present Perfect","existed and continues to exist as","'he has been here';'We have been some women'"
-
+"We Have Been","4","verb:Present Perfect First Person Plural As","existed and continues to exist as","'he has been here';'We have been some women'"
 Second Person Plural
 Existing in    
-
-"You Have Been","4","verb:Present Perfect","existed and continues to exist in the location, condition or state of","'you have been here'"
-
+"You Have Been","4","verb:Present Perfect Second Person Plural In","existed and continues to exist in the location, condition or state of","'you have been here'"
 Existing as
-
-"You Have Been","4","verb:Present Perfect","existed and continues to exist as","'he has been here';'you have been some women'"
-
+"You Have Been","4","verb:Present Perfect Second Person Plural As","existed and continues to exist as","'he has been here';'you have been some women'"
 Third Person Plural
 Existing in    
-
-"They Have Been","4","verb:Present Perfect","existed and continues to exist in the location, condition or state of","'they has been here'"
-
+"They Have Been","4","verb:Present Perfect Third Person Plural In","existed and continues to exist in the location, condition or state of","'they has been here'"
 Existing as
-
-"They Have Been","4","verb:Present Perfect","existed and continues to exist as","'he has been here';'they has been some women'"
+"They Have Been","4","verb:Present Perfect Third Person Plural As","existed and continues to exist as","'he has been here';'they has been some women'"
 
 
 
 Present Perfect Continuous
-   
-"Being","5","Present Perfect Continuous In","existing in the past and currently existing in the state, location of condition of","'she has been being very patient'"
-"Being","5","Present Perfect Continuous As","existing in the past and is currently existing as","'she has been being a very patient person'"
+First Person
+Existing in   
+"I Have Been Being","5","Present Perfect Continuous First Person In","existing in the past and currently existing in the state, location of condition of","'I have been being very patient'"
+Existing as
+"I Have Been Being","5","Present Perfect Continuous First Person As","existing in the past and is currently existing as","'I have been being a very patient person'"
+Second Person
+Existing in   
+"You Have Been Being","5","Present Perfect Continuous Second Person In","existing in the past and currently existing in the state, location of condition of","'You have been being very patient'"
+Existing as
+"You Have Been Being","5","Present Perfect Continuous Second Person As","existing in the past and is currently existing as","'You have been being a very patient person'"
+Third Person
+Existing in   
+"He/She/It has been Being","5","Present Perfect Continuous Third Person In","existing in the past and currently existing in the state, location of condition of","'she has been being very patient'"
+Existing as
+"He/She/It has been Being","5","Present Perfect Continuous Third Person As","existing in the past and is currently existing as","'she has been being a very patient person'"
+First Person Plural
+Existing in   
+"We Have Been Being","5","Present Perfect Continuous Firt Person Plural In","existing in the past and currently existing in the state, location of condition of","'We have been being very patient'"
+Existing as
+"We Have Been Being","5","Present Perfect Continuous Firt Person Plural As","existing in the past and is currently existing as","'We have been being a very patient group of people'"
+Second Person Plural
+Existing in   
+"You Have Been Being","5","Present Perfect Continuous Second Person Plural In","existing in the past and currently existing in the state, location of condition of","'You have been being very patient'"
+Existing as
+"You Have Been Being","5","Present Perfect Continuous Second Person Plural As","existing in the past and is currently existing as","'You have been being a very patient group of people'"
+Third Person Plural
+Existing in   
+"They Have Been Being","5","Present Perfect Continuous Third Person Plural In","existing in the past and currently existing in the state, location of condition of","'they have been being very patient'"
+Existing as
+"They Have Been Being","5","Present Perfect Continuous Third Person Plural As","existing in the past and is currently existing as","'they have been being a very patient group of people'"
 
 Past Simple
     
-"Was","3","Past Simple In","existed in the state, location of condition of","'She was happy yesterday'
-"Was","3","Past Simple As","existed as","'She was a happy person yesterday'"
+First Person
+Existing in   
+"I Was","3","Past Simple First Person In","existed in the state, location of condition of","'She was happy yesterday'
+Existing as
+"I Was","3","Past Simple First Person As","existed as","'She was a happy person yesterday'"
+Second Person
+Existing in   
+"You Were","5","Past Simple Second Person In","existing in the past and currently existing in the state, location of condition of","'You were very patient'"
+Existing as
+"You Were","5","Past Simple Second Person As","existing in the past and is currently existing as","'You were a very patient person'"
+Third Person
+Existing in   
+"He/She/It Was","3","Past Simple Thrid Person In","existed in the state, location of condition of","'She was happy yesterday'
+Existing as
+"He/She/It Was","3","Past Simple Thrid Person As","existed as","'She was a happy person yesterday'"
+First Person Plural
+Existing in   
+"We Were","5","Past Simple Firt Person Plural In","existing in the past and currently existing in the state, location of condition of","'We were very patient'"
+Existing as
+"We Were","5","Past Simple Firt Person Plural As","existing in the past and is currently existing as","'We were a very patient group of people'"
+Second Person Plural
+Existing in   
+"You Were","5","Past Simple Second Person Plural In","existing in the past and currently existing in the state, location of condition of","'You were very patient'"
+Existing as
+"You Were","5","Past Simple Second Person Plural As","existing in the past and is currently existing as","'You were a very patient group of people'"
+Third Person Plural
+Existing in   
+"The Were","5","Past Simple Third Person Plural In","existing in the past and currently existing in the state, location of condition of","'they were very patient'"
+Existing as
+"The Were","5","Past Simple Third Person Plural As","existing in the past and is currently existing as","'they were a very patient group of people'"
 
 Past Continuous (Progressive)
     
+Third Person
+Existing in   
 "Being","5","Past Continuous Progressive In","existing in the past and continued existing in a state, location or condition of","She was being kind to everyone."
+Existing as
 "Being","5","Past Continuous Progressive As","existing in the past and continued existing as","She was being a kind person to everyone."
 
 Past Perfect
     
+Third Person
+Existing in   
 "Been","4","Past Perfect In","existed before in a state, location or condition of","She had been teaching before she moved here"
+Existing as
 "Been","4","Past Perfect As","existed before as","She had been a teacher before she moved here"
 
 Past Perfect Continuous
     
+Third Person
+Existing in   
 "Been","4","Past Perfect Continuous In","","She had been being overly cautious."
+Existing as
 "Been","4","Past Perfect Continuous As","existed continuously as","She had been a person being overly cautious."
 
 Future Simple
     
+Third Person
+Existing in   
 "Be","2","Verb:Future Simple In","exist in the state, condition of location of","'she will be here tomorrow','he will be male tomorrow'"
+Existing as
 "Be","2","Verb:Future Simple As","exist as","'you can be a good person tomorrow';'he will be a man tomorrow'"
 
 
 Future Perfect
 
+Third Person
+Existing in   
 "Being","5","Verb:Future Continuous Progressive In","","She will be being helpful tomorrow"
+Existing as
 "Being","5","Verb:Future Continuous Progressive In","","She will be being a helpful person tomorrow"
 
 Future Perfect Continuous
 
+Third Person
+Existing in   
 "Been","5","Verb:Future Continuous Perfect In","existed in and are continuing to exist in the state, condition of location of","'she will have been teaching for one year tomorrow','he will have been male for one year tomorrow'"
+Existing as
 "Been","5","Verb:Future Continuous Perfect As","existed as and are contining to exist as","'you will have been a good person for one year tomorrow';'he will have been being a man for one year tomorrow'"
 
 
