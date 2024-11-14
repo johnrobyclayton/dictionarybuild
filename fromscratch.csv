@@ -105,6 +105,7 @@ Existing in the state of performing an action
 Existing as a member of a group performing an action
 
 Modal Auxiliary Verbs
+
 Shall
 Should
 Can
@@ -115,7 +116,18 @@ May
 Might
 Must
 Ought To
-I am 
+
+Quasi Modal Semi Auxiliary Verbs
+Aim To
+Aimed To
+Try To
+Tried To
+Attempt To
+Attempted To
+Fail To
+Failed To
+
+I am/do/want/avoid 
 I shall be
 I should be
 I can be
@@ -133,6 +145,8 @@ I try to be
 I tried to be
 I attempt to be
 I attempted to be
+I fail to be
+I failed to be
 
 I am not
 I shall not be
@@ -152,6 +166,8 @@ I try not to be
 I tried not to be
 I attempt not to be
 I attempted not to be
+I fail not to be
+I failed not to be
 
 Present Simple
 First Person
@@ -245,9 +261,9 @@ Existing as
 "You Have Been","4","verb:Present Perfect Second Person Plural As","existed and continues to exist as","'he has been here';'you have been some women'"
 Third Person Plural
 Existing in    
-"They Have Been","4","verb:Present Perfect Third Person Plural In","existed and continues to exist in the location, condition or state of","'they has been here'"
+"They Have Been","4","verb:Present Perfect Third Person Plural In","existed and continues to exist in the location, condition or state of","'they have been here'"
 Existing as
-"They Have Been","4","verb:Present Perfect Third Person Plural As","existed and continues to exist as","'he has been here';'they has been some women'"
+"They Have Been","4","verb:Present Perfect Third Person Plural As","existed and continues to exist as","'he has been here';'they have been some women'"
 
 
 
@@ -353,9 +369,9 @@ Past Perfect
     
 First Person
 Existing in   
-"I Had Been","3","Past Perfect First Person In","existed in the state, location of condition of","'She had been happy yesterday'
+"I Had Been","3","Past Perfect First Person In","existed in the state, location of condition of","'I had been happy yesterday'
 Existing as
-"I Had Been","3","Past Perfect First Person As","existed as","'She had been a happy person yesterday'"
+"I Had Been","3","Past Perfect First Person As","existed as","'I had been a happy person yesterday'"
 Second Person
 Existing in   
 "You Had Been","5","Past Perfect Second Person In","existing in the past and currently existing in the state, location of condition of","'You had been very patient'"
@@ -363,42 +379,192 @@ Existing as
 "You Had Been","5","Past Perfect Second Person As","existing in the past and is currently existing as","'You had been a very patient person'"
 Third Person
 Existing in   
-"He/She/It Had Been","4","Past Perfect In","existed before in a state, location or condition of","She had been teaching before she moved here"
+"He/She/It Had Been","4","Past Perfect Third Person In","existed before in a state, location or condition of","She had been teaching before she moved here"
 Existing as
-"He/She/It Had Been","4","Past Perfect As","existed before as","She had been a teacher before she moved here"
+"He/She/It Had Been","4","Past Perfect Third Person As","existed before as","She had been a teacher before she moved here"
+First Person Plural
+Existing in   
+"We Had Been","3","Past Perfect First Person Plural In","existed in the state, location of condition of","'We had been happy yesterday'
+Existing as
+"We Had Been","3","Past Perfect First Person Plural As","existed as","'We had been a happy group of people yesterday'"
+Second Person Plural
+Existing in   
+"You Had Been","5","Past Perfect Second Person Plural In","existing in the past and currently existing in the state, location of condition of","'You had been very patient'"
+Existing as
+"You Had Been","5","Past Perfect Second Person Plural As","existing in the past and is currently existing as","'You had been a very patient group of people'"
+Third Person Plural
+Existing in   
+"They Had Been","4","Past Perfect Third Person Plural In","existed before in a state, location or condition of","They had been teaching before they moved here"
+Existing as
+"They Had Been","4","Past Perfect Third Person Plural As","existed before as","They had been teachers before they moved here"
 
 Past Perfect Continuous
     
+First Person
+Existing in   
+"I Had Been Being","4","Past Perfect Continuous First Person In","","I had been being cautious."
+Existing as
+"I Had Been Being","4","Past Perfect Continuous First Person As","existed continuously as","I had been being a cautious person."
+Second Person
+Existing in   
+"You Had Been Being","4","Past Perfect Continuous Second Person In","","You had been being cautious."
+Existing as
+"You Had Been Being","4","Past Perfect Continuous Second Person As","existed continuously as","You had been being a cautious person."
 Third Person
 Existing in   
-"Been","4","Past Perfect Continuous In","","She had been being cautious."
+"He/She/It Had Been Being","4","Past Perfect Continuous Third Person In","","She had been being cautious."
 Existing as
-"Been","4","Past Perfect Continuous As","existed continuously as","She had been being a cautious person."
+"He/She/It Had Been Being","4","Past Perfect Continuous Third Person As","existed continuously as","She had been being a cautious person."
+First Person Plural
+Existing in   
+"We Had Been Being","4","Past Perfect Continuous First Person Plural In","","We had been being cautious."
+Existing as
+"We Had Been Being","4","Past Perfect Continuous First Person Plural As","existed continuously as","We had been being a cautious group of people."
+Second Person Plural
+Existing in   
+"You Had Been Being","4","Past Perfect Continuous Second Person Plural In","","You had been being cautious."
+Existing as
+"You Had Been Being","4","Past Perfect Continuous Second Person Plural As","existed continuously as","You had been being a cautious group of people."
+Third Person Plural
+Existing in   
+"They Had Been Being","4","Past Perfect Continuous Third Person Plural In","","They had been being cautious."
+Existing as
+"They Had Been Being","4","Past Perfect Continuous Third Person Plural As","existed continuously as","They had been being a cautious group of people."
 
 Future Simple
-    
+
+First Person
+Existing in   
+"I Will Be","4","Future Simple First Person In","","I will be cautious."
+Existing as
+"I Will Be","4","Future Simple First Person As","existed continuously as","I will be a cautious person."
+Second Person
+Existing in   
+"You Will Be","4","Future Simple Second Person In","","You will be cautious."
+Existing as
+"You Will Be","4","Future Simple Second Person As","existed continuously as","You will be a cautious person."
 Third Person
 Existing in   
-"Be","2","Verb:Future Simple In","exist in the state, condition of location of","'she will be here tomorrow','he will be male tomorrow'"
+"He/She/It Will Be","4","Future Simple Third Person In","","She will be cautious."
 Existing as
-"Be","2","Verb:Future Simple As","exist as","'you can be a good person tomorrow';'he will be a man tomorrow'"
+"He/She/It Will Be","4","Future Simple Third Person As","existed continuously as","She will be a cautious person."
+First Person Plural
+Existing in   
+"We Will Be","4","Future Simple First Person Plural In","","We will be cautious."
+Existing as
+"We Will Be","4","Future Simple First Person Plural As","existed continuously as","We will be a cautious group of people."
+Second Person Plural
+Existing in   
+"You Will Be","4","Future Simple Second Person Plural In","","You will be cautious."
+Existing as
+"You Will Be","4","Future Simple Second Person Plural As","existed continuously as","You will be a cautious group of people."
+Third Person Plural
+Existing in   
+"They Will Be","4","Future Simple Third Person Plural In","","They had been being cautious."
+Existing as
+"They Will Be","4","Future Simple Third Person Plural As","existed continuously as","They will be a cautious group of people."    
+
+
+Future Continuous Progressive
+
+First Person
+Existing in   
+"I Will Be Being","4","Future Continuous Progressive First Person In","","I will be being cautious."
+Existing as
+"I Will Be Being","4","Future Continuous Progressive First Person As","existed continuously as","I will be being a cautious person."
+Second Person
+Existing in   
+"You Will Be Being","4","Future Continuous Progressive Second Person In","","You will be being cautious."
+Existing as
+"You Will Be Being","4","Future Continuous Progressive Second Person As","existed continuously as","You will be being a cautious person."
+Third Person
+Existing in   
+"He/She/It Will Be Being","4","Future Continuous Progressive Third Person In","","She will be being cautious."
+Existing as
+"He/She/It Will Be Being","4","Future Continuous Progressive Third Person As","existed continuously as","She will be being a cautious person."
+First Person Plural
+Existing in   
+"We Will Be Being","4","Future Continuous Progressive First Person Plural In","","We will be being cautious."
+Existing as
+"We Will Be Being","4","Future Continuous Progressive First Person Plural As","existed continuously as","We will be being a cautious group of people."
+Second Person Plural
+Existing in   
+"You Will Be Being","4","Future Continuous Progressive Second Person Plural In","","You will be being cautious."
+Existing as
+"You Will Be Being","4","Future Continuous Progressive Second Person Plural As","existed continuously as","You will be being a cautious group of people."
+Third Person Plural
+Existing in   
+"They Will Be Being","4","Future Continuous Progressive Third Person Plural In","","They will be being cautious."
+Existing as
+"They Will Be Being","4","Future Continuous Progressive Third Person Plural As","existed continuously as","They will be being a cautious group of people."    
 
 
 Future Perfect
 
+First Person
+Existing in   
+"I Will Have Been","4","Future Perfect First Person In","","I will have been cautious."
+Existing as
+"I Will Have Been","4","Future Perfect First Person As","existed continuously as","I will have been a cautious person."
+Second Person
+Existing in   
+"You Will Have Been","4","Future Perfect Second Person In","","You will have been cautious."
+Existing as
+"You Will Have Been","4","Future Perfect Second Person As","existed continuously as","You will have been a cautious person."
 Third Person
 Existing in   
-"Being","5","Verb:Future Continuous Progressive In","","She will be being helpful tomorrow"
+"He/She/It Will Have Been","4","Future Perfect Third Person In","","She will have been cautious."
 Existing as
-"Being","5","Verb:Future Continuous Progressive In","","She will be being a helpful person tomorrow"
+"He/She/It Will Have Been","4","Future Perfect Third Person As","existed continuously as","She will have been a cautious person."
+First Person Plural
+Existing in   
+"We Will Have Been","4","Future Perfect First Person Plural In","","We will have been cautious."
+Existing as
+"We Will Have Been","4","Future Perfect First Person Plural As","existed continuously as","We will have been a cautious group of people."
+Second Person Plural
+Existing in   
+"You Will Have Been","4","Future Perfect Second Person Plural In","","You will have been cautious."
+Existing as
+"You Will Have Been","4","Future Perfect Second Person Plural As","existed continuously as","You will have been a cautious group of people."
+Third Person Plural
+Existing in   
+"They Will Have Been","4","Future Perfect Third Person Plural In","","They will have been cautious."
+Existing as
+"They Will Have Been","4","Future Perfect Third Person Plural As","existed continuously as","They will have been a cautious group of people."    
+
 
 Future Perfect Continuous
 
+First Person
+Existing in   
+"I Will Have Been Being","4","Future Perfect Continuous First Person In","","I will have been being cautious."
+Existing as
+"I Will Have Been Being","4","Future Perfect Continuous First Person As","existed continuously as","I will have been being a cautious person."
+Second Person
+Existing in   
+"You Will Have Been Being","4","Future Perfect Continuous Second Person In","","You will have been being cautious."
+Existing as
+"You Will Have Been Being","4","Future Perfect Continuous Second Person As","existed continuously as","You will have been being a cautious person."
 Third Person
 Existing in   
-"Been","5","Verb:Future Continuous Perfect In","existed in and are continuing to exist in the state, condition of location of","'she will have been teaching for one year tomorrow','he will have been male for one year tomorrow'"
+"He/She/It Will Have Been Being","4","Future Perfect Continuous Third Person In","","She will have been being cautious."
 Existing as
-"Been","5","Verb:Future Continuous Perfect As","existed as and are contining to exist as","'you will have been a good person for one year tomorrow';'he will have been being a man for one year tomorrow'"
+"He/She/It Will Have Been Being","4","Future Perfect Continuous Third Person As","existed continuously as","She will have been being a cautious person."
+First Person Plural
+Existing in   
+"We Will Have Been Being","4","Future Perfect Continuous First Person Plural In","","We will have been being cautious."
+Existing as
+"We Will Have Been Being","4","Future Perfect Continuous First Person Plural As","existed continuously as","We will have been being a cautious group of people."
+Second Person Plural
+Existing in   
+"You Will Have Been Being","4","Future Perfect Continuous Second Person Plural In","","You will have been being cautious."
+Existing as
+"You Will Have Been Being","4","Future Perfect Continuous Second Person Plural As","existed continuously as","You will have been being a cautious group of people."
+Third Person Plural
+Existing in   
+"They Will Have Been Being","4","Future Perfect Continuous Third Person Plural In","","They will have been being cautious."
+Existing as
+"They Will Have Been Being","4","Future Perfect Continuous Third Person Plural As","existed continuously as","They will have been being a cautious group of people."    
 
 
 
